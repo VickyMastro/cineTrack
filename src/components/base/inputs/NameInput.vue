@@ -14,7 +14,7 @@ const name = defineModel({ default: '' })
 </script>
 
 <template>
-  <UFormField name="name" :label="props.label">
+  <UFormField name="name" :label="props.label" class="w-full min-h-[76px]">
     <UInput
       v-model="name"
       :placeholder="props.placeholder"

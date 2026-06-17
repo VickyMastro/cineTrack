@@ -21,7 +21,7 @@ const show = ref(false)
 </script>
 
 <template>
-  <UFormField :name="props.name" :label="props.label" class="w-full">
+  <UFormField :name="props.name" :label="props.label" class="w-full min-h-[76px]">
     <UInput
       v-model="password"
       :type="show ? 'text' : 'password'"

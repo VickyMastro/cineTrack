@@ -14,7 +14,7 @@ const email = defineModel({ default: '' })
 </script>
 
 <template>
-  <UFormField name="email" :label="props.label" class="w-full">
+  <UFormField name="email" :label="props.label" class="w-full min-h-[76px]">
     <UInput
       v-model="email"
       icon="i-heroicons-envelope"

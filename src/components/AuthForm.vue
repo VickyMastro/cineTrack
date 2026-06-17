@@ -34,18 +34,18 @@ async function loginButton() {
 
 <template>
   <div
-    class="relative z-10 w-full max-w-sm bg-zinc-900 border border-zinc-700 rounded-2xl p-8 flex flex-col gap-4 min-h-[460px]"
+    class="relative z-10 w-[384px] h-auto bg-zinc-900 border border-zinc-700 rounded-2xl p-8 flex flex-col gap-1"
   >
     <h1 class="font-bold text-2xl text-center">Bienvenido</h1>
     <p class="text-center text-neutral-400 text-sm">Inicia sesión para continuar viendo</p>
-    <UForm class="flex flex-col" :state="loginData" :schema="schema">
+    <UForm class="flex flex-col gap-1" :state="loginData" :schema="schema">
       <EmailInput v-model="loginData.email" />
       <PasswordInput v-model="loginData.password" />
       <div class="flex justify-end text-sm p-2">
         <AuthLink title="Olvide mi contraseña" />
       </div>
       <AuthButton label="Iniciar sesión" @click="loginButton" />
-      <div class="flex justify-center text-sm pt-5">
+      <div class="flex justify-center text-sm pt-2">
         <span class="mr-1">¿No tienes cuenta?</span>
         <AuthLink title="Registrate" to="/registration" />
       </div>

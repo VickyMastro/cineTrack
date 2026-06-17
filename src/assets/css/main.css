@@ -1,2 +1,15 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+:root {
+  --ui-neutral: var(--color-zinc-950);
+  --ui-bg: var(--color-zinc-950);
+  --ui-text: var(--color-zinc-50);
+}
+
+@layer base {
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+}

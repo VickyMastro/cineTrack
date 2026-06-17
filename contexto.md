@@ -16,6 +16,7 @@ CineTrack es una aplicación web para el portafolio de una desarrolladora fronte
 | Componentes UI   | Nuxt UI v3 (modo Vue, sin Nuxt)     |
 | Estilos          | Tailwind CSS v4 (vía Nuxt UI)        |
 | Enrutamiento     | Vue Router                           |
+| Estado global    | Pinia                                |
 | Backend / Auth   | Supabase (HTTP REST API directo)        |
 | API de contenido | TMDB API v3                          |
 
@@ -52,11 +53,66 @@ VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 - Las peticiones se autentican enviando el `anon key` en el header `apikey` y el JWT del usuario en `Authorization: Bearer <token>`.
 - Se puede almacenar en Supabase la lista personal de películas/series vistas o en lista de seguimiento de cada usuario.
 
+### Proyecto Supabase
+
+- **Nombre:** cineTrack
+- **URL:** `https://xgwmburyugpqojvrszim.supabase.co`
+- **Project Ref:** `xgwmburyugpqojvrszim`
+
 ### Variables de entorno requeridas (Supabase)
 ```
-VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
+VITE_SUPABASE_URL=https://xgwmburyugpqojvrszim.supabase.co
 VITE_SUPABASE_ANON_KEY=tu_anon_key_aqui
 ```
+
+### Esquema de base de datos
+
+La migración inicial está en `supabase/migrations/20260616_init.sql` y fue aplicada al proyecto remoto. Crea:
+
+#### Tabla `public.profiles`
+Extiende `auth.users` con datos de perfil. Se crea automáticamente al registrarse un usuario via trigger.
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID (PK) | Referencia a `auth.users(id)` |
+| `username` | TEXT | Nombre de usuario (se toma de `raw_user_meta_data` al registrarse) |
+| `avatar_url` | TEXT | URL del avatar (opcional) |
+| `created_at` | TIMESTAMPTZ | Fecha de creación |
+
+#### Tabla `public.watchlist`
+Películas y series que el usuario marcó como vistas o pendientes.
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID (PK) | Clave primaria autogenerada |
+| `user_id` | UUID | Referencia a `auth.users(id)` |
+| `tmdb_id` | INTEGER | ID del contenido en TMDB |
+| `media_type` | TEXT | `'movie'` o `'tv'` |
+| `status` | TEXT | `'watched'` o `'pending'` |
+| `title` | TEXT | Título del contenido |
+| `poster_path` | TEXT | Ruta del poster (de TMDB, opcional) |
+| `vote_average` | NUMERIC(3,1) | Puntuación (de TMDB, opcional) |
+| `created_at` | TIMESTAMPTZ | Fecha en que se agregó |
+
+- Restricción única: `(user_id, tmdb_id, media_type)` — no se puede duplicar el mismo contenido.
+- RLS habilitado: cada usuario solo accede a sus propias filas (políticas SELECT, INSERT, UPDATE, DELETE).
+
+### Supabase CLI
+
+- Instalada en `~/.local/share/supabase/` (versión 2.106.0).
+- Proyecto vinculado: `supabase link --project-ref xgwmburyugpqojvrszim`.
+- Para aplicar futuras migraciones: agregar `.sql` en `supabase/migrations/` y ejecutar `supabase db push`.
+- Requiere `export PATH="$HOME/.local/share/supabase:$PATH"` en la terminal antes de usar.
+
+---
+
+## Estado Global: Pinia
+
+- Pinia está instalada y registrada en `main.js` con `createPinia()`.
+- Se registra **antes** del router y del plugin de Nuxt UI.
+- Las stores se ubican en `src/stores/` con el prefijo `use` (ej: `useUserStore`).
+- Se usa la **Options API de Pinia** (`defineStore` con `state` y `actions`).
+- Al instalar por primera vez, si Vite lanza error de módulo no encontrado, limpiar la caché con `rm -rf node_modules/.vite` y reiniciar el servidor.
 
 ---
 
@@ -89,6 +145,9 @@ cineTrack/
 │   │   └── supabase.js         # Helpers para Supabase HTTP (fetch)
 │   ├── App.vue                 # Componente raíz con <UApp>
 │   └── main.js                 # Entry point, registra router y ui plugin
+├── supabase/
+│   └── migrations/
+│       └── 20260616_init.sql   # Migración inicial: tablas profiles y watchlist
 ├── contexto.md                 # Este archivo
 ├── .env                        # Variables de entorno (no commitear)
 ├── .env.example                # Ejemplo de variables de entorno

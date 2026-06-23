@@ -19,12 +19,35 @@ function authFetch(path, options = {}, accessToken = null) {
 
 export const useUserStore = defineStore('user', {
   state: () => ({
-    user: {
-      username: '',
-    },
+    user: JSON.parse(localStorage.getItem('user')) || { username: '' },
     accessToken: null,
+    sessionRestored: false,
   }),
   actions: {
+    async restoreSession() {
+      const refreshToken = localStorage.getItem('refresh_token')
+      if (!refreshToken) return
+
+      const res = await authFetch('/token?grant_type=refresh_token', {
+        method: 'POST',
+        body: JSON.stringify({ refresh_token: refreshToken }),
+      })
+
+      const data = await res.json()
+      if (data.access_token) {
+        this.accessToken = data.access_token
+        this.user = {
+          id: data.user.id,
+          email: data.user.email,
+          username: data.user.user_metadata.username,
+        }
+        localStorage.setItem('refresh_token', data.refresh_token)
+        localStorage.setItem('user', JSON.stringify(this.user))
+      }
+
+      this.sessionRestored = true
+    },
+
     async registerUser(username, email, password) {
       const res = await authFetch('/signup', {
         method: 'POST',
@@ -32,15 +55,14 @@ export const useUserStore = defineStore('user', {
       })
       const data = await res.json()
 
-      /* Borrar xd */
-      console.log(data)
-
       this.user = {
         id: data.user.id,
         email: data.user.email,
         username: data.user.user_metadata.username,
       }
       this.accessToken = data.access_token
+      localStorage.setItem('refresh_token', data.refresh_token)
+      localStorage.setItem('user', JSON.stringify(this.user))
     },
 
     async login(email, password) {
@@ -56,6 +78,8 @@ export const useUserStore = defineStore('user', {
         username: data.user.user_metadata.username,
       }
       this.accessToken = data.access_token
+      localStorage.setItem('refresh_token', data.refresh_token)
+      localStorage.setItem('user', JSON.stringify(this.user))
     },
   },
 })

@@ -81,5 +81,14 @@ export const useUserStore = defineStore('user', {
       localStorage.setItem('refresh_token', data.refresh_token)
       localStorage.setItem('user', JSON.stringify(this.user))
     },
+
+    async logout() {
+      const res = await authFetch('/logout', { method: 'POST' }, this.accessToken)
+
+      this.user = { username: '' }
+      this.accessToken = null
+      localStorage.removeItem('refresh_token')
+      localStorage.removeItem('user')
+    },
   },
 })

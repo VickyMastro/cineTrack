@@ -1,8 +1,9 @@
 <script setup>
+import MovieBrowser from '../components/home/MovieBrowser.vue'
 import HeaderApp from '../layout/HeaderApp.vue'
 </script>
 
 <template>
   <HeaderApp />
-  <div>Me conecte</div>
+  <MovieBrowser />
 </template>

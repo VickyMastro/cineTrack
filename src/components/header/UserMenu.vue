@@ -37,7 +37,7 @@ const userMenuItems = [
 <template>
   <UDropdownMenu :items="userMenuItems">
     <div class="flex items-center gap-2 cursor-pointer">
-      <UAvatar size="sm" :alt="userStore.user.username" class="bg-neutral-700" />
+      <UAvatar size="sm" :alt="userStore.user.username" class="bg-green-500/15" />
       <span class="text-white text-sm font-medium">{{ userStore.user.username }}</span>
     </div>
 

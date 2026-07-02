@@ -1,0 +1,44 @@
+-- Agrega la columna backdrop_path a la tabla content
+ALTER TABLE content ADD COLUMN IF NOT EXISTS backdrop_path TEXT;
+
+-- Actualiza cada fila con su valor correspondiente
+UPDATE content SET backdrop_path = '/6tROOVmV5vRymO2g52aR8kWlfoT.jpg' WHERE id = 1392469;
+UPDATE content SET backdrop_path = '/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg' WHERE id = 1339713;
+UPDATE content SET backdrop_path = '/7TJjD2X9GTEqyLVIJKLS85J2V47.jpg' WHERE id = 28322;
+UPDATE content SET backdrop_path = '/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg' WHERE id = 936075;
+UPDATE content SET backdrop_path = '/laR2dpcNpbv83jdlRUNAYPPjH90.jpg' WHERE id = 931285;
+UPDATE content SET backdrop_path = '/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg' WHERE id = 1084244;
+UPDATE content SET backdrop_path = '/A2tzVTVtnTvpji96IZmleN78KKv.jpg' WHERE id = 1239134;
+UPDATE content SET backdrop_path = '/1x9e0qWonw634NhIsRdvnneeqvN.jpg' WHERE id = 1523145;
+UPDATE content SET backdrop_path = '/iYjlQzWbcFIjWe2WifbEPb4kErp.jpg' WHERE id = 1127384;
+UPDATE content SET backdrop_path = '/krhj4Fhb0G3QCmyBtEADxgFFmRX.jpg' WHERE id = 11012;
+UPDATE content SET backdrop_path = '/t6O6XWelu27BD0OmIDCCufZZT6d.jpg' WHERE id = 1301421;
+UPDATE content SET backdrop_path = '/4lj7MZtcIDI2FmZXGkFWh0sNCsq.jpg' WHERE id = 1228710;
+UPDATE content SET backdrop_path = '/wQOhbCP6H8bO5ddlXDZT207orew.jpg' WHERE id = 1477317;
+UPDATE content SET backdrop_path = '/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg' WHERE id = 1226863;
+UPDATE content SET backdrop_path = '/emK2hOB6ACiExT0lNLog9lAmMFL.jpg' WHERE id = 1226293;
+UPDATE content SET backdrop_path = '/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg' WHERE id = 1275779;
+UPDATE content SET backdrop_path = '/1eAuwNBy34kkM3xkl202z4f1NiI.jpg' WHERE id = 1367220;
+UPDATE content SET backdrop_path = '/2WU6Y6aonzD6uAaCmNnEFlesxxJ.jpg' WHERE id = 614945;
+UPDATE content SET backdrop_path = '/ew3EqF9VLTxmK64OsHT7p7lr4wT.jpg' WHERE id = 1280738;
+UPDATE content SET backdrop_path = '/l1nekhf05HS5OpBr0vRqcD3NxoS.jpg' WHERE id = 1103473;
+UPDATE content SET backdrop_path = '/m7eiSGHFzr584zFmetGqkqaU6BN.jpg' WHERE id = 124364;
+UPDATE content SET backdrop_path = '/577eXC8wFQT0eUrJcgznSiFPRmk.jpg' WHERE id = 94997;
+UPDATE content SET backdrop_path = '/hAuYDYBgLJ1qIPoAOM7yOD56uCp.jpg' WHERE id = 284631;
+UPDATE content SET backdrop_path = '/52sp0vPhLOWrZ1QoZIWiapronM.jpg'  WHERE id = 273240;
+UPDATE content SET backdrop_path = '/cA2K3clHcQBtRVbmYX7c6Outst9.jpg' WHERE id = 107447;
+UPDATE content SET backdrop_path = '/obtdxPgmfykYwVnvuYXC5f2xKlQ.jpg' WHERE id = 2734;
+UPDATE content SET backdrop_path = '/6iNWfGVCEfASDdlNb05TP5nG0ll.jpg' WHERE id = 79744;
+UPDATE content SET backdrop_path = '/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg' WHERE id = 76479;
+UPDATE content SET backdrop_path = '/2OMB0ynKlyIenMJWI2Dy9IWT4c.jpg'  WHERE id = 1399;
+UPDATE content SET backdrop_path = '/k2RvAGp7b9Yh2py7NC6ZFZ9N5gR.jpg' WHERE id = 290138;
+UPDATE content SET backdrop_path = '/tc7canPSAn2X14hYi6Rl3gZm1o4.jpg' WHERE id = 549;
+UPDATE content SET backdrop_path = '/jP0Rhj9OTPDAwQlHQwOLFDdeE8t.jpg' WHERE id = 1416;
+UPDATE content SET backdrop_path = '/z0R6ToCsMMkLwuQXjzzdd1QCdJv.jpg' WHERE id = 278178;
+UPDATE content SET backdrop_path = '/ro0tlgnsco4SwbdAgmscLkSlMSL.jpg' WHERE id = 1622;
+UPDATE content SET backdrop_path = '/nn3SuLTO4hum8yAxaY4ql8h6kRk.jpg' WHERE id = 4614;
+UPDATE content SET backdrop_path = '/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg' WHERE id = 5920;
+UPDATE content SET backdrop_path = '/575sxZXNNulSlIz7DvtWH5r4lkC.jpg' WHERE id = 45952;
+UPDATE content SET backdrop_path = '/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg' WHERE id = 276161;
+UPDATE content SET backdrop_path = '/80vo7eYhAXPJltu32lG5JGrGPzG.jpg' WHERE id = 288603;
+UPDATE content SET backdrop_path = '/5AYXcPhbtPe6i1MPnutPhCV6qNd.jpg' WHERE id = 276880;

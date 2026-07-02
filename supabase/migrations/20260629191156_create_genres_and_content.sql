@@ -1,0 +1,2 @@
+-- Migración aplicada directamente en el dashboard remoto.
+-- Este archivo es un placeholder para sincronizar el historial local con el remoto.

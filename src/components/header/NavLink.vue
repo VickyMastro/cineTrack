@@ -19,7 +19,7 @@ const props = defineProps({
     <button
       :class="[
         'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors',
-        isActive ? 'bg-neutral-800 text-white' : 'text-neutral-400 hover:text-neutral-200',
+        isActive ? 'bg-green-500/15 text-green-400' : 'text-neutral-400 hover:text-neutral-200',
       ]"
     >
       <UIcon :name="props.icon" class="size-4" />

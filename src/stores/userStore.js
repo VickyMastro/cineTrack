@@ -83,7 +83,7 @@ export const useUserStore = defineStore('user', {
     },
 
     async logout() {
-      const res = await authFetch('/logout', { method: 'POST' }, this.accessToken)
+      await authFetch('/logout', { method: 'POST' }, this.accessToken)
 
       this.user = { username: '' }
       this.accessToken = null

@@ -22,6 +22,7 @@ export const useMovieStore = defineStore('movie', {
   state: () => ({
     movies: [],
     favoriteIds: new Set(),
+    bookmarkIds: new Set(),
   }),
   actions: {
     async getMovies() {
@@ -32,7 +33,7 @@ export const useMovieStore = defineStore('movie', {
 
       this.movies = data
     },
-
+    /* FAVORITES */
     async getFavoritesMovies() {
       const userStore = useUserStore()
       const uid = userStore.user.id
@@ -47,7 +48,7 @@ export const useMovieStore = defineStore('movie', {
 
       const data = await res.json()
 
-      this.favoriteIds = new Set(data.map((f) => f.content_id))
+      this.favoriteIds = new Set(data.map((d) => d.content_id))
     },
 
     async addFavoriteMovie(contentId) {
@@ -77,6 +78,50 @@ export const useMovieStore = defineStore('movie', {
         userStore.accessToken,
       )
       this.favoriteIds.delete(content_id)
+    },
+    /* BOOKMARKS */
+    async getBookmarksMovies() {
+      const userStore = useUserStore()
+      const uid = userStore.user.id
+
+      const res = await movieFetch(
+        `/bookmarks?user_id=eq.${uid}&select=content_id`,
+        {
+          method: 'GET',
+        },
+        userStore.accessToken,
+      )
+      const data = await res.json()
+      this.bookmarkIds = new Set(data.map((d) => d.content_id))
+    },
+
+    async addBookmarkMovie(contentId) {
+      const userStore = useUserStore()
+      const uid = userStore.user.id
+
+      const res = await movieFetch(
+        '/bookmarks',
+        {
+          method: 'POST',
+          body: JSON.stringify({ user_id: uid, content_id: contentId }),
+        },
+        userStore.accessToken,
+      )
+      this.bookmarkIds.add(contentId)
+    },
+
+    async deleteBookmarkMovie(content_id) {
+      const userStore = useUserStore()
+      const uid = userStore.user.id
+
+      const res = await movieFetch(
+        `/bookmarks?user_id=eq.${uid}&content_id=eq.${content_id}`,
+        {
+          method: 'DELETE',
+        },
+        userStore.accessToken,
+      )
+      this.bookmarkIds.delete(content_id)
     },
   },
 })

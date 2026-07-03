@@ -1,6 +1,7 @@
 <script setup>
 import { useMovieStore } from '../../stores/movieStore'
 import FavoriteFilter from '../filters/FavoriteFilter.vue'
+import BookmarkFilter from '../filters/BookmarkFilter.vue'
 
 const imageBase = 'https://image.tmdb.org/t/p/original'
 const movieStore = useMovieStore()
@@ -18,18 +19,10 @@ function type(movie) {
 <template>
   <div class="resultados-contador">{{ movieStore.movies.length }} Resultados</div>
   <div class="grid-peliculas">
-    <article
-      v-for="movie in movieStore.movies"
-      :key="movie.id"
-      class="tarjeta group"
-    >
+    <article v-for="movie in movieStore.movies" :key="movie.id" class="tarjeta group">
       <!-- Poster -->
       <div class="tarjeta-poster">
-        <img
-          :src="`${imageBase}${movie.poster_path}`"
-          :alt="movie.title"
-          class="poster-img"
-        />
+        <img :src="`${imageBase}${movie.poster_path}`" :alt="movie.title" class="poster-img" />
 
         <!-- Overlay oscuro al hover -->
         <div class="overlay-hover" />
@@ -40,9 +33,7 @@ function type(movie) {
 
         <div class="acciones-overlay">
           <FavoriteFilter :movieId="movie.id" />
-          <button class="boton-guardar">
-            <UIcon name="i-heroicons-bookmark-solid" class="size-4" />
-          </button>
+          <BookmarkFilter :movieId="movie.id" />
           <button class="boton-ojo">
             <UIcon name="i-heroicons-eye" class="size-4" />
           </button>
@@ -70,11 +61,7 @@ function type(movie) {
         </div>
 
         <div class="generos">
-          <span
-            v-for="gender in movie.genres"
-            :key="gender.id"
-            class="badge-genero"
-          >
+          <span v-for="gender in movie.genres" :key="gender.id" class="badge-genero">
             {{ gender.name }}
           </span>
         </div>
@@ -116,10 +103,6 @@ function type(movie) {
 
 .acciones-overlay {
   @apply absolute top-2 right-2 flex flex-col gap-1.5;
-}
-
-.boton-guardar {
-  @apply p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-green-400 transition-colors;
 }
 
 .boton-ojo {

@@ -11,7 +11,7 @@ const props = defineProps({
 const movieStore = useMovieStore()
 const isFavorite = computed(() => movieStore.favoriteIds.has(props.movieId))
 
-async function addFavorite() {
+async function favoriteStatus() {
   isFavorite.value
     ? await movieStore.deleteFavoriteMovie(props.movieId)
     : await movieStore.addFavoriteMovie(props.movieId)
@@ -22,7 +22,7 @@ async function addFavorite() {
   <button
     :class="isFavorite ? 'bg-red-400/80 text-red-500' : 'bg-black/60 text-white hover:text-red-400'"
     class="p-1.5 rounded-full backdrop-blur-sm transition-colors"
-    @click="addFavorite"
+    @click="favoriteStatus"
   >
     <UIcon :name="isFavorite ? 'i-heroicons-heart-solid' : 'i-heroicons-heart'" class="size-4" />
   </button>

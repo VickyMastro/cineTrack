@@ -2,6 +2,7 @@
 import { useMovieStore } from '../../stores/movieStore'
 import FavoriteFilter from '../filters/FavoriteFilter.vue'
 import BookmarkFilter from '../filters/BookmarkFilter.vue'
+import WatchedFilter from '../filters/WatchedFilter.vue'
 
 const imageBase = 'https://image.tmdb.org/t/p/original'
 const movieStore = useMovieStore()
@@ -34,9 +35,7 @@ function type(movie) {
         <div class="acciones-overlay">
           <FavoriteFilter :movieId="movie.id" />
           <BookmarkFilter :movieId="movie.id" />
-          <button class="boton-ojo">
-            <UIcon name="i-heroicons-eye" class="size-4" />
-          </button>
+          <WatchedFilter :movieId="movie.id" />
         </div>
 
         <!-- Botón Ver detalles centrado vertical y horizontal -->
@@ -103,10 +102,6 @@ function type(movie) {
 
 .acciones-overlay {
   @apply absolute top-2 right-2 flex flex-col gap-1.5;
-}
-
-.boton-ojo {
-  @apply p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-white hover:text-white/70 transition-colors;
 }
 
 .boton-detalles-wrapper {

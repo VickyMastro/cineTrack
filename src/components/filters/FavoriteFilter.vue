@@ -6,6 +6,10 @@ const props = defineProps({
     type: Number,
     default: null,
   },
+  actionName: {
+    type: String,
+    default: 'favorite',
+  },
 })
 
 const movieStore = useMovieStore()
@@ -13,8 +17,8 @@ const isFavorite = computed(() => movieStore.favoriteIds.has(props.movieId))
 
 async function favoriteStatus() {
   isFavorite.value
-    ? await movieStore.deleteFavoriteMovie(props.movieId)
-    : await movieStore.addFavoriteMovie(props.movieId)
+    ? await movieStore.deleteActionToMovie(props.movieId, props.actionName)
+    : await movieStore.addActionToMovie(props.movieId, props.actionName)
 }
 </script>
 

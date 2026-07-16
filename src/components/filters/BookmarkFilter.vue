@@ -6,6 +6,10 @@ const props = defineProps({
     type: Number,
     default: null,
   },
+  actionName: {
+    type: String,
+    default: 'bookmark',
+  },
 })
 
 const movieStore = useMovieStore()
@@ -13,8 +17,8 @@ const isBookmark = computed(() => movieStore.bookmarkIds.has(props.movieId))
 
 async function bookmarkStatus() {
   isBookmark.value
-    ? await movieStore.deleteBookmarkMovie(props.movieId)
-    : await movieStore.addBookmarkMovie(props.movieId)
+    ? await movieStore.deleteActionToMovie(props.movieId, props.actionName)
+    : await movieStore.addActionToMovie(props.movieId, props.actionName)
 }
 </script>
 

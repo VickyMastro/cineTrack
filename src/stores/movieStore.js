@@ -21,11 +21,16 @@ function movieFetch(path, options = {}, accessToken = null) {
 export const useMovieStore = defineStore('movie', {
   state: () => ({
     movies: [],
+    filters: { type: 'all', genre: 'all', year: 'all' },
+    genres: [],
     favoriteIds: new Set(),
     bookmarkIds: new Set(),
     watchedIds: new Set(),
   }),
   actions: {
+    clearFilters() {
+      this.filters = { type: 'all', genre: 'all', year: 'all' }
+    },
     async getMovies() {
       const res = await movieFetch('/content_with_genres', {
         method: 'GET',
@@ -33,6 +38,15 @@ export const useMovieStore = defineStore('movie', {
       const data = await res.json()
 
       this.movies = data
+    },
+
+    async getGenres() {
+      const res = await movieFetch('/genres', {
+        method: 'GET',
+      })
+      const data = await res.json()
+
+      this.genres = data
     },
 
     async getMoviesByAction() {
@@ -102,6 +116,23 @@ export const useMovieStore = defineStore('movie', {
       if (action === 'watched') {
         this.watchedIds.delete(contentId)
       }
+    },
+  },
+  getters: {
+    movieList(state) {
+      let movies = state.movies
+      if (state.filters.type !== 'all') {
+        movies = movies.filter((m) => m.type === state.filters.type)
+      }
+      if (state.filters.genre !== 'all') {
+        movies = movies.filter((m) => {
+          return m.genres.some((g) => g.id === state.filters.genre)
+        })
+      }
+      if (state.filters.year !== 'all') {
+        movies = movies.filter((m) => m.release_date.slice(0, 4) === state.filters.year)
+      }
+      return movies
     },
   },
 })

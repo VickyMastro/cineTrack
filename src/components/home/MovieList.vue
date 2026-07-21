@@ -18,9 +18,9 @@ function type(movie) {
 </script>
 
 <template>
-  <div class="resultados-contador">{{ movieStore.movies.length }} Resultados</div>
+  <div class="resultados-contador">{{ movieStore.movieList.length }} Resultados</div>
   <div class="grid-peliculas">
-    <article v-for="movie in movieStore.movies" :key="movie.id" class="tarjeta group">
+    <article v-for="movie in movieStore.movieList" :key="movie.id" class="tarjeta group">
       <!-- Poster -->
       <div class="tarjeta-poster">
         <img :src="`${imageBase}${movie.poster_path}`" :alt="movie.title" class="poster-img" />

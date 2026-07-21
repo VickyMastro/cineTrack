@@ -22,6 +22,7 @@ export const useMovieStore = defineStore('movie', {
   state: () => ({
     movies: [],
     filters: { type: 'all', genre: 'all', year: 'all' },
+    searchText: '',
     genres: [],
     favoriteIds: new Set(),
     bookmarkIds: new Set(),
@@ -121,6 +122,11 @@ export const useMovieStore = defineStore('movie', {
   getters: {
     movieList(state) {
       let movies = state.movies
+      let searchText = state.searchText.trim().toLowerCase()
+
+      if (state.searchText !== '') {
+        movies = movies.filter((m) => m.title.toLowerCase().includes(searchText))
+      }
       if (state.filters.type !== 'all') {
         movies = movies.filter((m) => m.type === state.filters.type)
       }

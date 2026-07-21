@@ -5,10 +5,10 @@ import { useMovieStore } from '../../stores/movieStore'
 const showFilters = ref(false)
 const movieStore = useMovieStore()
 
-async function completeItems() {
+async function handleGetGenres() {
   await movieStore.getGenres()
 }
-completeItems()
+handleGetGenres()
 
 const typeItems = [
   { label: 'Todos', value: 'all' },
@@ -36,6 +36,7 @@ function handleClearFilters() {
   <div class="flex flex-col items-center gap-3">
     <div class="flex items-center gap-3 w-full max-w-3xl">
       <UInput
+        v-model="movieStore.searchText"
         icon="i-heroicons-magnifying-glass"
         size="md"
         variant="outline"

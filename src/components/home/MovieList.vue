@@ -3,6 +3,7 @@ import { useMovieStore } from '../../stores/movieStore'
 import FavoriteFilter from '../filters/FavoriteFilter.vue'
 import BookmarkFilter from '../filters/BookmarkFilter.vue'
 import WatchedFilter from '../filters/WatchedFilter.vue'
+import DetailMovieModal from './DetailMovieModal.vue'
 
 const imageBase = 'https://image.tmdb.org/t/p/original'
 const movieStore = useMovieStore()
@@ -40,10 +41,7 @@ function type(movie) {
 
         <!-- Botón Ver detalles centrado vertical y horizontal -->
         <div class="boton-detalles-wrapper">
-          <button class="boton-detalles">
-            <UIcon name="i-heroicons-play-solid" class="size-3.5" />
-            Ver detalles
-          </button>
+          <DetailMovieModal :movie="movie" />
         </div>
       </div>
 
@@ -60,8 +58,8 @@ function type(movie) {
         </div>
 
         <div class="generos">
-          <span v-for="gender in movie.genres" :key="gender.id" class="badge-genero">
-            {{ gender.name }}
+          <span v-for="genre in movie.genres" :key="genre.id" class="badge-genero">
+            {{ genre.name }}
           </span>
         </div>
       </div>
@@ -106,10 +104,6 @@ function type(movie) {
 
 .boton-detalles-wrapper {
   @apply absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 pointer-events-none;
-}
-
-.boton-detalles {
-  @apply pointer-events-auto flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-3 py-1.5 rounded-full transition-colors;
 }
 
 .tarjeta-info {

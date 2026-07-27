@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useMovieStore } from '../../stores/movieStore'
-/* cambiar a false */
+
 const showFilters = ref(false)
 const movieStore = useMovieStore()
 

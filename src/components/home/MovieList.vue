@@ -8,11 +8,6 @@ import DetailMovieModal from './DetailMovieModal.vue'
 const imageBase = 'https://image.tmdb.org/t/p/original'
 const movieStore = useMovieStore()
 
-async function getMovies() {
-  await movieStore.getMovies()
-}
-getMovies()
-
 function type(movie) {
   return movie.type === 'movie' ? 'Pelicula' : 'Serie'
 }

@@ -8,6 +8,7 @@ const movieStore = useMovieStore()
 
 onMounted(async () => {
   await userStore.restoreSession()
+  await movieStore.getMovies()
   await movieStore.getMoviesByAction()
 })
 </script>

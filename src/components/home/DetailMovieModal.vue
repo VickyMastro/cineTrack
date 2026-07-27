@@ -19,10 +19,12 @@ function contentType(movie) {
 
 <template>
   <UModal scrollable :ui="{ overlay: 'z-[100]', content: 'z-[100] max-w-xl' }">
-    <button class="boton-detalles">
-      <UIcon name="i-heroicons-play-solid" class="size-3.5" />
-      Ver detalles
-    </button>
+    <slot>
+      <button class="boton-detalles">
+        <UIcon name="i-heroicons-play-solid" class="size-3.5" />
+        Ver detalles
+      </button>
+    </slot>
 
     <template #content="{ close }">
       <div class="modal-detalle">

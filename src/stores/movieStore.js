@@ -24,6 +24,7 @@ export const useMovieStore = defineStore('movie', {
     filters: { type: 'all', genre: 'all', year: 'all' },
     searchText: '',
     genres: [],
+    libraryFilter: 'watched',
     favoriteIds: new Set(),
     bookmarkIds: new Set(),
     watchedIds: new Set(),
@@ -137,6 +138,26 @@ export const useMovieStore = defineStore('movie', {
       }
       if (state.filters.year !== 'all') {
         movies = movies.filter((m) => m.release_date.slice(0, 4) === state.filters.year)
+      }
+      return movies
+    },
+    libraryMovieList(state) {
+      let movies = state.movies
+
+      if (state.libraryFilter === 'watched') {
+        movies = movies.filter((m) => {
+          return state.watchedIds.has(m.id)
+        })
+      }
+      if (state.libraryFilter === 'bookmark') {
+        movies = movies.filter((m) => {
+          return state.bookmarkIds.has(m.id)
+        })
+      }
+      if (state.libraryFilter === 'favorite') {
+        movies = movies.filter((m) => {
+          return state.favoriteIds.has(m.id)
+        })
       }
       return movies
     },

@@ -15,7 +15,7 @@ const props = defineProps({
 })
 </script>
 <template>
-  <RouterLink :to="props.to" custom v-slot="{ isActive }">
+  <RouterLink :to="props.to" v-slot="{ isActive }">
     <button
       :class="[
         'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors',

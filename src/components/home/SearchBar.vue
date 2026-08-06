@@ -30,6 +30,10 @@ const yearItems = computed(() => {
 function handleClearFilters() {
   movieStore.clearFilters()
 }
+
+const activeFiltersCount = computed(
+  () => Object.values(movieStore.filters).filter((value) => value !== 'all').length,
+)
 </script>
 
 <template>
@@ -43,14 +47,22 @@ function handleClearFilters() {
         placeholder="Buscar películas o series..."
         class="flex-1"
       />
-      <UButton
-        color="neutral"
-        variant="outline"
-        icon="i-heroicons-adjustments-horizontal"
-        @click="showFilters = !showFilters"
+      <UChip
+        :text="activeFiltersCount"
+        color="primary"
+        size="3xl"
+        :show="activeFiltersCount > 0"
+        :ui="{ base: 'h-5 min-w-5 text-[11px]' }"
       >
-        Filtros
-      </UButton>
+        <UButton
+          color="neutral"
+          variant="outline"
+          icon="i-heroicons-adjustments-horizontal"
+          @click="showFilters = !showFilters"
+        >
+          Filtros
+        </UButton>
+      </UChip>
     </div>
     <!-- filtros -->
     <div

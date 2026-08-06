@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import MovieList from './MovieList.vue'
 import SearchBar from './SearchBar.vue'
 </script>

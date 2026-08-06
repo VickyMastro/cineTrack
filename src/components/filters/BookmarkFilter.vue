@@ -25,7 +25,7 @@ async function bookmarkStatus() {
 <template>
   <button
     :class="
-      isBookmark ? 'bg-green-400/30 text-green-800' : 'bg-black/60 text-white hover:text-green-400'
+      isBookmark ? 'bg-green-800/30 text-green-500' : 'bg-black/60 text-white hover:text-green-400'
     "
     class="p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-green-400 transition-colors;"
     @click="bookmarkStatus"

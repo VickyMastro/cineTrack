@@ -24,7 +24,7 @@ async function favoriteStatus() {
 
 <template>
   <button
-    :class="isFavorite ? 'bg-red-400/80 text-red-500' : 'bg-black/60 text-white hover:text-red-400'"
+    :class="isFavorite ? 'bg-red-800/30 text-red-500' : 'bg-black/60 text-white hover:text-red-400'"
     class="p-1.5 rounded-full backdrop-blur-sm transition-colors"
     @click="favoriteStatus"
   >

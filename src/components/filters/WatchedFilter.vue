@@ -25,7 +25,7 @@ async function watchedStatus() {
 <template>
   <button
     :class="
-      isWatched ? 'bg-blue-400/30 text-blue-800' : 'bg-black/60 text-white hover:text-blue-400'
+      isWatched ? 'bg-blue-800/30 text-blue-500' : 'bg-black/60 text-white hover:text-blue-400'
     "
     class="p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-blue-400 transition-colors;"
     @click="watchedStatus"

@@ -161,5 +161,41 @@ export const useMovieStore = defineStore('movie', {
       }
       return movies
     },
+    averageRating(state) {
+      const watchedMovies = state.movies.filter((m) => state.watchedIds.has(m.id))
+
+      if (watchedMovies.length === 0) return 0
+
+      const total = watchedMovies.reduce((sum, m) => sum + m.vote_average, 0)
+      return Number((total / watchedMovies.length).toFixed(1))
+    },
+    mediaCounts(state) {
+      const watchedMovies = state.movies.filter((m) => state.watchedIds.has(m.id))
+
+      return {
+        movies: watchedMovies.filter((m) => m.type === 'movie'),
+        series: watchedMovies.filter((m) => m.type === 'serie'),
+      }
+    },
+    favoritesGenres(state) {
+      if (!state.favoriteIds.size) return []
+
+      const countsByGenreId = new Map()
+
+      for (const movie of state.movies) {
+        if (!state.favoriteIds.has(movie.id)) continue
+
+        for (const genre of movie.genres) {
+          const entry = countsByGenreId.get(genre.id)
+          if (entry) {
+            entry.count++
+          } else {
+            countsByGenreId.set(genre.id, { id: genre.id, name: genre.name, count: 1 })
+          }
+        }
+      }
+
+      return [...countsByGenreId.values()].sort((a, b) => b.count - a.count)
+    },
   },
 })

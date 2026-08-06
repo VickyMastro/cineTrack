@@ -40,6 +40,7 @@ export const useUserStore = defineStore('user', {
           id: data.user.id,
           email: data.user.email,
           username: data.user.user_metadata.username,
+          created: data.user.created_at,
         }
         localStorage.setItem('refresh_token', data.refresh_token)
         localStorage.setItem('user', JSON.stringify(this.user))
@@ -59,6 +60,7 @@ export const useUserStore = defineStore('user', {
         id: data.user.id,
         email: data.user.email,
         username: data.user.user_metadata.username,
+        created: data.user.created_at,
       }
       this.accessToken = data.access_token
       localStorage.setItem('refresh_token', data.refresh_token)
@@ -76,6 +78,7 @@ export const useUserStore = defineStore('user', {
         id: data.user.id,
         email: data.user.email,
         username: data.user.user_metadata.username,
+        created: data.user.created_at,
       }
       this.accessToken = data.access_token
       localStorage.setItem('refresh_token', data.refresh_token)

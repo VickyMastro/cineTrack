@@ -1,10 +1,43 @@
 <script setup>
 import FilterTabButton from '../base/buttons/FilterTabButton.vue'
 import DetailMovieModal from '../home/DetailMovieModal.vue'
+import NoResultsView from '../../views/NoResultsView.vue'
+import { computed } from 'vue'
 import { useMovieStore } from '../../stores/movieStore.js'
 
 const movieStore = useMovieStore()
 const imageBase = 'https://image.tmdb.org/t/p/original'
+
+const showEmptyLibrary = computed(
+  () => movieStore.movies.length > 0 && movieStore.libraryMovieList.length === 0,
+)
+
+const emptyCopy = computed(() => {
+  if (movieStore.libraryFilter === 'bookmark') {
+    return {
+      icon: 'i-heroicons-bookmark',
+      iconClass: 'text-green-400',
+      title: 'Todavía no hay pendientes',
+      description: 'Guardá películas y series para ver más tarde y van a aparecer acá.',
+    }
+  }
+
+  if (movieStore.libraryFilter === 'favorite') {
+    return {
+      icon: 'i-heroicons-heart',
+      iconClass: 'text-red-400',
+      title: 'Todavía no hay favoritas',
+      description: 'Marcá películas y series con el corazón para armar tu colección.',
+    }
+  }
+
+  return {
+    icon: 'i-heroicons-eye',
+    iconClass: 'text-blue-400',
+    title: 'Todavía no hay contenido visto',
+    description: 'Explorá el catálogo y marcalas como vistas para verlas acá.',
+  }
+})
 </script>
 
 <template>
@@ -31,7 +64,14 @@ const imageBase = 'https://image.tmdb.org/t/p/original'
     />
   </nav>
 
-  <div class="lista-peliculas">
+  <NoResultsView
+    v-if="showEmptyLibrary"
+    :icon="emptyCopy.icon"
+    :icon-class="emptyCopy.iconClass"
+    :title="emptyCopy.title"
+    :description="emptyCopy.description"
+  />
+  <div v-else class="lista-peliculas">
     <article
       v-for="movie in movieStore.libraryMovieList"
       :key="movie.id"

@@ -1,6 +1,15 @@
 <script setup>
 import MovieList from './MovieList.vue'
 import SearchBar from './SearchBar.vue'
+import NoResultsView from '../../views/NoResultsView.vue'
+import { useMovieStore } from '../../stores/movieStore'
+import { computed } from 'vue'
+
+const movieStore = useMovieStore()
+
+const showNoResults = computed(
+  () => movieStore.movies.length > 0 && movieStore.movieList.length === 0,
+)
 </script>
 
 <template>
@@ -16,5 +25,6 @@ import SearchBar from './SearchBar.vue'
     </div>
   </section>
   <SearchBar />
-  <MovieList />
+  <NoResultsView v-if="showNoResults" />
+  <MovieList v-else />
 </template>

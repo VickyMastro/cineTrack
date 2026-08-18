@@ -1,6 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../../stores/userStore'
+import { useNotify } from '../../composables/useNotify.js'
+
+const { error } = useNotify()
 
 const userStore = useUserStore()
 const router = useRouter()
@@ -8,10 +11,10 @@ const router = useRouter()
 async function logout() {
   try {
     await userStore.logout()
-    router.push('/auth')
-  } catch (error) {
-    console.log(error)
+  } catch (e) {
+    error('Ocurrio un error.', e.message)
   }
+  router.push('/auth')
 }
 
 const userMenuItems = [

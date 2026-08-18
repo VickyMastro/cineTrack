@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useUserStore } from '../../stores/userStore'
+import { useNotify } from '../../composables/useNotify.js'
+
+const { success, error } = useNotify()
 
 const userStore = useUserStore()
 let username = userStore.user.username
@@ -9,7 +12,12 @@ const isEditing = ref(false)
 async function editButton() {
   isEditing.value = !isEditing.value
   if (username != userStore.user.username) {
-    await userStore.updateUsername(username)
+    try {
+      await userStore.updateUsername(username)
+      success('Edición realizada con exito.', 'Se actualizo tu nombre de usuario')
+    } catch (e) {
+      error('Ocurrio un error', e.message)
+    }
   }
 }
 </script>

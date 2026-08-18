@@ -91,6 +91,10 @@ export const useMovieStore = defineStore('movie', {
         userStore.accessToken,
       )
 
+      if (!res.ok) {
+        throw new Error('No se pudo guardar. Intentá de nuevo.')
+      }
+
       if (action === 'favorite') {
         this.favoriteIds.add(contentId)
       }
@@ -113,6 +117,10 @@ export const useMovieStore = defineStore('movie', {
         },
         userStore.accessToken,
       )
+
+      if (!res.ok) {
+        throw new Error('No se pudo eliminar. Intentá de nuevo.')
+      }
 
       if (action === 'favorite') {
         this.favoriteIds.delete(contentId)

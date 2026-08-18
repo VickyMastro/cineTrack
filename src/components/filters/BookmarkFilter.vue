@@ -1,6 +1,10 @@
 <script setup>
-import { useMovieStore } from '../../stores/movieStore'
 import { computed } from 'vue'
+import { useMovieStore } from '../../stores/movieStore'
+import { useNotify } from '../../composables/useNotify.js'
+
+const { error } = useNotify()
+
 const props = defineProps({
   movieId: {
     type: Number,
@@ -16,9 +20,13 @@ const movieStore = useMovieStore()
 const isBookmark = computed(() => movieStore.bookmarkIds.has(props.movieId))
 
 async function bookmarkStatus() {
-  isBookmark.value
-    ? await movieStore.deleteActionToMovie(props.movieId, props.actionName)
-    : await movieStore.addActionToMovie(props.movieId, props.actionName)
+  try {
+    isBookmark.value
+      ? await movieStore.deleteActionToMovie(props.movieId, props.actionName)
+      : await movieStore.addActionToMovie(props.movieId, props.actionName)
+  } catch (e) {
+    error('Ocurrio un error.', e.message)
+  }
 }
 </script>
 

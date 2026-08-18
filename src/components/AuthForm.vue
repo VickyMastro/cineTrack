@@ -8,6 +8,9 @@ import EmailInput from './base/inputs/EmailInput.vue'
 import PasswordInput from './base/inputs/PasswordInput.vue'
 import AuthButton from './base/buttons/AuthButton.vue'
 import AuthLink from './base/links/AuthLink.vue'
+import { useNotify } from '../composables/useNotify'
+
+const { error } = useNotify()
 
 const userStore = useUserStore()
 const router = useRouter()
@@ -26,8 +29,8 @@ async function loginButton() {
   try {
     await userStore.login(loginData.email, loginData.password)
     router.push('/')
-  } catch (error) {
-    console.log(error)
+  } catch (e) {
+    error('No se pudo iniciar sesión', e.message)
   }
 }
 </script>

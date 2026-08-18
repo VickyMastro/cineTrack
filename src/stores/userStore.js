@@ -57,6 +57,16 @@ export const useUserStore = defineStore('user', {
       })
       const data = await res.json()
 
+      if (!res.ok) {
+        if (data.error_code === 'user_already_exists' || data.error_code === 'email_exists') {
+          throw new Error('Ese email ya está registrado')
+        }
+        if (data.error_code === 'validation_failed') {
+          throw new Error('El email no es válido')
+        }
+        throw new Error('No se pudo crear la cuenta. Intentá de nuevo')
+      }
+
       this.user = {
         id: data.user.id,
         email: data.user.email,
@@ -93,6 +103,13 @@ export const useUserStore = defineStore('user', {
       })
       const data = await res.json()
 
+      if (!res.ok) {
+        if (data.error_code === 'invalid_credentials') {
+          throw new Error('Email o contraseña incorrectos')
+        }
+        throw new Error('No se pudo iniciar sesión. Intentá de nuevo.')
+      }
+
       this.user = {
         id: data.user.id,
         email: data.user.email,
@@ -105,12 +122,25 @@ export const useUserStore = defineStore('user', {
     },
 
     async logout() {
-      await authFetch('/logout', { method: 'POST' }, this.accessToken)
+      let serverError = false
+
+      try {
+        const res = await authFetch('/logout', { method: 'POST' }, this.accessToken)
+        if (!res.ok && res.status >= 500) {
+          serverError = true
+        }
+      } catch {
+        serverError = true
+      }
 
       this.accessToken = null
       this.user = { username: '' }
       localStorage.removeItem('refresh_token')
       localStorage.removeItem('user')
+
+      if (serverError) {
+        throw new Error('No se pudo cerrar sesión en el servidor')
+      }
     },
 
     async deleteAccount() {

@@ -9,6 +9,9 @@ import EmailInput from './base/inputs/EmailInput.vue'
 import PasswordInput from './base/inputs/PasswordInput.vue'
 import AuthButton from './base/buttons/AuthButton.vue'
 import AuthLink from './base/links/AuthLink.vue'
+import { useNotify } from '../composables/useNotify'
+
+const { success, error } = useNotify()
 
 const userStore = useUserStore()
 const router = useRouter()
@@ -33,9 +36,10 @@ const registerData = reactive({
 async function registerButton() {
   try {
     await userStore.registerUser(registerData.name, registerData.email, registerData.password)
+    success('Registro exitoso.', 'Se creo tu cuenta con exito')
     router.push('/')
-  } catch (error) {
-    console.log(error)
+  } catch (e) {
+    error('No se pudo crear tu cuenta', e.message)
   }
 }
 </script>

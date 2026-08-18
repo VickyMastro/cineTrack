@@ -5,6 +5,7 @@ import AuthView from './views/AuthView.vue'
 import RegistrationView from './views/RegistrationView.vue'
 import LibraryView from './views/LibraryView.vue'
 import StatsView from './views/StatsView.vue'
+import ProfileView from './views/ProfileView.vue'
 
 const routes = [
   { path: '/', component: HomeView, meta: { requiresAuth: true } },
@@ -12,6 +13,7 @@ const routes = [
   { path: '/registration', component: RegistrationView },
   { path: '/library', component: LibraryView, meta: { requiresAuth: true } },
   { path: '/stats', component: StatsView, meta: { requiresAuth: true } },
+  { path: '/profile', component: ProfileView, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 const BASE_URL = `${import.meta.env.VITE_SUPABASE_URL}/auth/v1`
+const FUNCTIONS_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1`
 const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 function authFetch(path, options = {}, accessToken = null) {
@@ -67,6 +68,24 @@ export const useUserStore = defineStore('user', {
       localStorage.setItem('user', JSON.stringify(this.user))
     },
 
+    async updateUsername(newUsername) {
+      const res = await authFetch(
+        '/user',
+        {
+          method: 'PUT',
+          body: JSON.stringify({ data: { username: newUsername } }),
+        },
+        this.accessToken,
+      )
+
+      if (!res.ok) {
+        throw new Error('No se pudo actualizar el nombre de usuario')
+      }
+
+      this.user.username = newUsername
+      localStorage.setItem('user', JSON.stringify(this.user))
+    },
+
     async login(email, password) {
       const res = await authFetch('/token?grant_type=password', {
         method: 'POST',
@@ -88,8 +107,29 @@ export const useUserStore = defineStore('user', {
     async logout() {
       await authFetch('/logout', { method: 'POST' }, this.accessToken)
 
-      this.user = { username: '' }
       this.accessToken = null
+      this.user = { username: '' }
+      localStorage.removeItem('refresh_token')
+      localStorage.removeItem('user')
+    },
+
+    async deleteAccount() {
+      const res = await fetch(`${FUNCTIONS_URL}/delete-account`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: ANON_KEY,
+          Authorization: `Bearer ${this.accessToken}`,
+        },
+      })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body.error || 'No se pudo eliminar la cuenta')
+      }
+
+      this.accessToken = null
+      this.user = { username: '' }
       localStorage.removeItem('refresh_token')
       localStorage.removeItem('user')
     },

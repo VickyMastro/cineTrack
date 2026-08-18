@@ -1,6 +1,8 @@
 <script setup>
+import PersonalInformation from './PersonalInformation.vue'
 import { computed } from 'vue'
 import { useUserStore } from '../../stores/userStore'
+import ProfileButtons from './ProfileButtons.vue'
 
 const userStore = useUserStore()
 
@@ -33,6 +35,12 @@ const formattedDate = computed(() => {
           </span>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="px-6 pb-6 mt-4">
+    <div class="grid grid-cols-4 gap-4">
+      <PersonalInformation />
+      <ProfileButtons />
     </div>
   </section>
 </template>

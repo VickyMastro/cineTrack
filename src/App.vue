@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useMovieStore } from './stores/movieStore'
 import { useUserStore } from './stores/userStore'
 
@@ -9,8 +9,24 @@ const movieStore = useMovieStore()
 onMounted(async () => {
   await userStore.restoreSession()
   await movieStore.getMovies()
-  await movieStore.getMoviesByAction()
+  if (userStore.accessToken) {
+    await movieStore.getMoviesByAction()
+  }
 })
+
+watch(
+  () => userStore.user.id,
+  async (newId, oldId) => {
+    if (newId === oldId) return
+
+    if (!newId) {
+      movieStore.clearUserActions()
+      return
+    }
+
+    await movieStore.getMoviesByAction()
+  },
+)
 </script>
 
 <template>

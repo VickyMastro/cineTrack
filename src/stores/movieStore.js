@@ -33,6 +33,11 @@ export const useMovieStore = defineStore('movie', {
     clearFilters() {
       this.filters = { type: 'all', genre: 'all', year: 'all' }
     },
+    clearUserActions() {
+      this.favoriteIds = new Set()
+      this.bookmarkIds = new Set()
+      this.watchedIds = new Set()
+    },
     async getMovies() {
       const res = await movieFetch('/content_with_genres', {
         method: 'GET',

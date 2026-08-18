@@ -22,7 +22,7 @@ const userMenuItems = [
       disabled: true,
     },
   ],
-  [{ label: 'Mi perfil', icon: 'i-heroicons-user' }],
+  [{ label: 'Mi perfil', icon: 'i-heroicons-user', to: 'profile' }],
   [
     {
       label: 'Cerrar sesión',

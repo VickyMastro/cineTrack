@@ -89,7 +89,7 @@ function contentType(movie) {
 </template>
 
 <style>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .boton-detalles {
   @apply pointer-events-auto flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black text-xs font-bold px-3 py-1.5 rounded-full transition-colors;
@@ -100,11 +100,11 @@ function contentType(movie) {
 }
 
 .modal-backdrop {
-  @apply relative h-72 bg-cover bg-center bg-neutral-800 rounded-t-lg;
+  @apply relative h-72 bg-cover bg-center bg-muted rounded-t-lg;
 }
 
 .modal-backdrop-overlay {
-  @apply absolute inset-0 bg-linear-to-t from-neutral-900 via-neutral-900/10 to-black/30;
+  @apply absolute inset-0 bg-linear-to-t from-elevated via-elevated/10 to-black/30;
 }
 
 .boton-cerrar {
@@ -116,11 +116,11 @@ function contentType(movie) {
 }
 
 .modal-poster {
-  @apply w-24 h-36 object-cover rounded-lg ring-2 ring-neutral-900 shadow-lg bg-neutral-800;
+  @apply w-24 h-36 object-cover rounded-lg ring-2 ring-default shadow-lg bg-muted;
 }
 
 .modal-cuerpo {
-  @apply bg-neutral-900 pt-16 px-6 pb-6 rounded-b-lg;
+  @apply bg-elevated pt-16 px-6 pb-6 rounded-b-lg;
 }
 
 .modal-header {
@@ -128,11 +128,11 @@ function contentType(movie) {
 }
 
 .badge-tipo-modal {
-  @apply inline-block rounded-full bg-neutral-800 px-2.5 py-0.5 text-xs font-semibold text-neutral-300 mb-2;
+  @apply inline-block rounded-full bg-accented px-2.5 py-0.5 text-xs font-semibold text-toned mb-2;
 }
 
 .modal-titulo {
-  @apply text-2xl font-bold text-white;
+  @apply text-2xl font-bold text-highlighted;
 }
 
 .modal-acciones {
@@ -140,11 +140,11 @@ function contentType(movie) {
 }
 
 .boton-marcar-vista {
-  @apply flex items-center gap-1.5 rounded-full border border-neutral-700 px-3.5 py-2 text-sm font-medium text-white hover:border-neutral-500 transition-colors;
+  @apply flex items-center gap-1.5 rounded-full border border-accented px-3.5 py-2 text-sm font-medium text-highlighted hover:border-muted transition-colors;
 }
 
 .modal-meta {
-  @apply mt-4 flex items-center gap-4 text-sm text-neutral-400;
+  @apply mt-4 flex items-center gap-4 text-sm text-muted;
 }
 
 .modal-meta span {
@@ -156,18 +156,18 @@ function contentType(movie) {
 }
 
 .badge-genero-modal {
-  @apply rounded-full bg-neutral-800 px-2.5 py-1 text-xs font-medium text-neutral-200;
+  @apply rounded-full bg-accented px-2.5 py-1 text-xs font-medium text-toned;
 }
 
 .modal-divisor {
-  @apply my-5 border-neutral-800;
+  @apply my-5 border-default;
 }
 
 .modal-subtitulo {
-  @apply text-base font-semibold text-white mb-2;
+  @apply text-base font-semibold text-highlighted mb-2;
 }
 
 .modal-sinopsis {
-  @apply text-sm leading-relaxed text-neutral-300;
+  @apply text-sm leading-relaxed text-toned;
 }
 </style>

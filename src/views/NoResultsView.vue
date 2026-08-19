@@ -26,8 +26,8 @@ defineProps({
       <UIcon :name="icon" class="size-8" :class="iconClass" />
     </div>
     <div class="flex flex-col gap-1.5">
-      <h2 class="text-white font-bold text-xl">{{ title }}</h2>
-      <p class="text-neutral-400 text-sm max-w-md">
+      <h2 class="text-highlighted font-bold text-xl">{{ title }}</h2>
+      <p class="text-muted text-sm max-w-md">
         {{ description }}
       </p>
     </div>

@@ -50,21 +50,21 @@ function setLibraryFilter() {
 </template>
 
 <style>
-@reference "tailwindcss";
+@reference "../../../assets/css/main.css";
 
 .item-biblioteca {
-  @apply flex items-center gap-1.5 text-sm font-medium text-neutral-400 transition-colors hover:text-neutral-200;
+  @apply flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm font-medium text-muted transition-colors hover:text-highlighted hover:bg-accented/60;
 }
 
 .item-biblioteca--activo {
-  @apply text-white font-semibold;
+  @apply bg-green-500/15 text-highlighted font-semibold hover:bg-green-500/15;
 }
 
 .contador-biblioteca {
-  @apply flex items-center justify-center rounded-full bg-neutral-800 px-2 py-0.5 text-xs font-medium text-neutral-400;
+  @apply flex items-center justify-center rounded-full bg-accented px-2 py-0.5 text-xs font-medium text-muted;
 }
 
 .contador-biblioteca--activo {
-  @apply text-white font-semibold;
+  @apply text-highlighted font-semibold;
 }
 </style>

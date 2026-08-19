@@ -48,13 +48,13 @@ async function editButton() {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .tarjeta-cuenta {
-  @apply rounded-xl border border-neutral-800 bg-neutral-900 p-6;
+  @apply rounded-xl border border-default bg-elevated p-6;
 }
 
 .titulo-tarjeta {
-  @apply text-lg font-bold text-white;
+  @apply text-lg font-bold text-highlighted;
 }
 </style>

@@ -37,10 +37,10 @@ async function loginButton() {
 
 <template>
   <div
-    class="relative z-10 w-[384px] h-auto bg-zinc-900 border border-zinc-700 rounded-2xl p-8 flex flex-col gap-1"
+    class="relative z-10 w-[384px] h-auto bg-elevated border border-default rounded-2xl p-8 flex flex-col gap-1"
   >
     <h1 class="font-bold text-2xl text-center">Bienvenido</h1>
-    <p class="text-center text-neutral-400 text-sm">Inicia sesión para continuar viendo</p>
+    <p class="text-center text-muted text-sm">Inicia sesión para continuar viendo</p>
     <UForm class="flex flex-col gap-1" :state="loginData" :schema="schema">
       <EmailInput v-model="loginData.email" />
       <PasswordInput v-model="loginData.password" />

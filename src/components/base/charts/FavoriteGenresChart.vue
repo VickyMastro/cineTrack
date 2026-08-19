@@ -18,15 +18,15 @@ function barWidth(count) {
       <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
         <UIcon name="i-heroicons-arrow-trending-up" class="text-green-400 size-4" />
       </div>
-      <h2 class="text-white font-bold">Géneros favoritos</h2>
+      <h2 class="text-highlighted font-bold">Géneros favoritos</h2>
     </div>
 
     <div
       v-if="!topGenres.length"
       class="absolute inset-0 flex flex-col items-center justify-center gap-1.5 px-6 text-center"
     >
-      <p class="text-white text-lg font-medium">Todavía no tienes géneros favoritos</p>
-      <p class="text-neutral-400 text-sm flex flex-wrap items-center justify-center gap-1">
+      <p class="text-highlighted text-lg font-medium">Todavía no tienes géneros favoritos</p>
+      <p class="text-muted text-sm flex flex-wrap items-center justify-center gap-1">
         Toca el
         <UIcon name="i-heroicons-heart" class="size-3.5 text-red-400" />
         en una película para agregarla
@@ -35,10 +35,10 @@ function barWidth(count) {
     <div v-else class="flex flex-col gap-4">
       <div v-for="genre in topGenres" :key="genre.id">
         <div class="flex items-center justify-between mb-1.5">
-          <span class="text-white text-sm font-medium">{{ genre.name }}</span>
-          <span class="text-neutral-400 text-xs">{{ genre.count }} títulos</span>
+          <span class="text-highlighted text-sm font-medium">{{ genre.name }}</span>
+          <span class="text-muted text-xs">{{ genre.count }} títulos</span>
         </div>
-        <div class="h-1.5 w-full rounded-full bg-neutral-800 overflow-hidden">
+        <div class="h-1.5 w-full rounded-full bg-accented overflow-hidden">
           <div
             class="h-full rounded-full bg-green-500"
             :style="{ width: barWidth(genre.count) }"
@@ -50,9 +50,9 @@ function barWidth(count) {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../../assets/css/main.css";
 
 .fondo {
-  @apply relative flex h-full min-h-64 w-full flex-col rounded-xl border border-neutral-800 bg-neutral-900 p-6;
+  @apply relative flex h-full min-h-64 w-full flex-col rounded-xl border border-default bg-elevated p-6;
 }
 </style>

@@ -114,18 +114,18 @@ const emptyCopy = computed(() => {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .lista-biblioteca {
-  @apply flex items-center justify-center gap-20 border-t border-neutral-800 py-4;
+  @apply flex w-fit mx-auto items-center gap-1 rounded-xl border border-default bg-elevated p-1 my-4;
 }
 
 .lista-peliculas {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-x-12 px-6;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 px-6 pb-6 dark:gap-x-12 dark:gap-y-0 dark:pb-0;
 }
 
 .fila-pelicula {
-  @apply flex items-center gap-5 py-6 border-b border-neutral-800;
+  @apply flex items-center gap-5 rounded-xl border border-default bg-elevated p-4 dark:rounded-none dark:border-x-0 dark:border-t-0 dark:bg-transparent dark:p-0 dark:py-6;
 }
 
 .fila-poster {
@@ -133,7 +133,7 @@ const emptyCopy = computed(() => {
 }
 
 .fila-poster-img {
-  @apply w-full aspect-2/3 object-cover bg-neutral-800;
+  @apply w-full aspect-2/3 object-cover bg-muted;
 }
 
 .overlay-hover {
@@ -145,15 +145,15 @@ const emptyCopy = computed(() => {
 }
 
 .titulo {
-  @apply text-base font-bold text-white leading-tight line-clamp-1;
+  @apply text-base font-bold text-highlighted leading-tight line-clamp-1;
 }
 
 .meta {
-  @apply mt-2 flex items-center gap-3 text-sm text-neutral-400;
+  @apply mt-2 flex items-center gap-3 text-sm text-muted;
 }
 
 .badge-tipo-lista {
-  @apply rounded-full bg-neutral-800 px-2.5 py-1 text-xs font-semibold text-white;
+  @apply rounded-full bg-accented px-2.5 py-1 text-xs font-semibold text-highlighted;
 }
 
 .rating {
@@ -165,6 +165,6 @@ const emptyCopy = computed(() => {
 }
 
 .badge-genero {
-  @apply rounded-full bg-neutral-800 px-2.5 py-1 text-xs font-medium text-neutral-200;
+  @apply rounded-full bg-accented px-2.5 py-1 text-xs font-medium text-toned;
 }
 </style>

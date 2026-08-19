@@ -92,10 +92,10 @@ async function closeSession() {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .modal-baja {
-  @apply flex flex-col gap-3 rounded-lg bg-neutral-900 p-6;
+  @apply flex flex-col gap-3 rounded-lg bg-elevated p-6;
 }
 
 .icono-alerta {
@@ -103,11 +103,11 @@ async function closeSession() {
 }
 
 .titulo-baja {
-  @apply text-lg font-bold text-white;
+  @apply text-lg font-bold text-highlighted;
 }
 
 .texto-baja {
-  @apply text-sm text-neutral-400;
+  @apply text-sm text-muted;
 }
 
 .acciones-baja {

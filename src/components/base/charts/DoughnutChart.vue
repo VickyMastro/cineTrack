@@ -39,15 +39,15 @@ const options = {
       <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
         <UIcon name="i-heroicons-film" class="text-green-400 size-4" />
       </div>
-      <h2 class="text-white font-bold">Distribución de contenido</h2>
+      <h2 class="text-highlighted font-bold">Distribución de contenido</h2>
     </div>
 
     <div
       v-if="!totalCount"
       class="absolute inset-0 flex flex-col items-center justify-center gap-1.5 px-6 text-center"
     >
-      <p class="text-white text-lg font-medium">Todavía no tienes contenido visto</p>
-      <p class="text-neutral-400 text-sm flex flex-wrap items-center justify-center gap-1">
+      <p class="text-highlighted text-lg font-medium">Todavía no tienes contenido visto</p>
+      <p class="text-muted text-sm flex flex-wrap items-center justify-center gap-1">
         Toca el
         <UIcon name="i-heroicons-eye" class="size-3.5 text-green-400" />
         en una película para agregarla
@@ -58,7 +58,7 @@ const options = {
       <div class="relative w-40 h-40 shrink-0">
         <Doughnut :data="data" :options="options" />
         <div class="absolute inset-0 flex items-center justify-center">
-          <span class="text-white font-bold text-3xl">{{ totalCount }}</span>
+          <span class="text-highlighted font-bold text-3xl">{{ totalCount }}</span>
         </div>
       </div>
 
@@ -67,15 +67,15 @@ const options = {
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-[#00d091] shrink-0"></span>
           <div>
-            <p class="text-white text-sm font-medium">Películas</p>
-            <p class="text-neutral-400 text-xs">{{ moviesCount }} títulos</p>
+            <p class="text-highlighted text-sm font-medium">Películas</p>
+            <p class="text-muted text-xs">{{ moviesCount }} títulos</p>
           </div>
         </div>
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-neutral-700 shrink-0"></span>
           <div>
-            <p class="text-white text-sm font-medium">Series</p>
-            <p class="text-neutral-400 text-xs">{{ seriesCount }} títulos</p>
+            <p class="text-highlighted text-sm font-medium">Series</p>
+            <p class="text-muted text-xs">{{ seriesCount }} títulos</p>
           </div>
         </div>
       </div>
@@ -84,9 +84,9 @@ const options = {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../../assets/css/main.css";
 
 .fondo {
-  @apply relative flex h-full min-h-64 w-full flex-col rounded-xl border border-neutral-800 bg-neutral-900 p-6;
+  @apply relative flex h-full min-h-64 w-full flex-col rounded-xl border border-default bg-elevated p-6;
 }
 </style>

@@ -46,10 +46,10 @@ async function registerButton() {
 
 <template>
   <div
-    class="relative z-10 w-[384px] h-auto bg-zinc-900 border border-zinc-700 rounded-2xl p-6 flex flex-col gap-2"
+    class="relative z-10 w-[384px] h-auto bg-elevated border border-default rounded-2xl p-6 flex flex-col gap-2"
   >
     <h1 class="font-bold text-2xl text-center">Crear cuenta</h1>
-    <p class="text-center text-neutral-400 text-sm">
+    <p class="text-center text-muted text-sm">
       Registrate para guardar tu contenido favorito
     </p>
     <UForm class="flex flex-col" :state="registerData" :schema="schema">

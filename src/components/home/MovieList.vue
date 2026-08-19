@@ -63,10 +63,10 @@ function type(movie) {
 </template>
 
 <style>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .resultados-contador {
-  @apply px-6 pt-2;
+  @apply px-6 pt-2 text-muted;
 }
 
 .grid-peliculas {
@@ -74,7 +74,7 @@ function type(movie) {
 }
 
 .tarjeta {
-  @apply flex flex-col overflow-hidden rounded-xl bg-neutral-900 border border-neutral-800 shadow-lg cursor-pointer transition-colors duration-200 hover:border-green-500;
+  @apply flex flex-col overflow-hidden rounded-xl bg-elevated border border-default shadow-lg cursor-pointer transition-colors duration-200 hover:border-green-500;
 }
 
 .tarjeta-poster {
@@ -82,7 +82,7 @@ function type(movie) {
 }
 
 .poster-img {
-  @apply w-full aspect-2/3 object-cover bg-neutral-800 transition-transform duration-300 group-hover:scale-105;
+  @apply w-full aspect-2/3 object-cover bg-muted transition-transform duration-300 group-hover:scale-105;
 }
 
 .overlay-hover {
@@ -106,11 +106,11 @@ function type(movie) {
 }
 
 .titulo {
-  @apply text-sm font-bold text-white leading-tight line-clamp-1;
+  @apply text-sm font-bold text-highlighted leading-tight line-clamp-1;
 }
 
 .meta {
-  @apply mt-1.5 flex items-center gap-3 text-xs text-neutral-400;
+  @apply mt-1.5 flex items-center gap-3 text-xs text-muted;
 }
 
 .rating {
@@ -122,6 +122,6 @@ function type(movie) {
 }
 
 .badge-genero {
-  @apply rounded-full bg-neutral-800 px-2 py-0.5 text-xs font-medium text-neutral-200;
+  @apply rounded-full bg-accented px-2 py-0.5 text-xs font-medium text-toned;
 }
 </style>

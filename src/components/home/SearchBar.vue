@@ -67,7 +67,7 @@ const activeFiltersCount = computed(
     <!-- filtros -->
     <div
       v-if="showFilters"
-      class="w-full max-w-3xl border border-neutral-800 rounded-xl p-4 flex flex-col gap-3"
+      class="w-full max-w-3xl border border-neutral-400 dark:border-neutral-800 rounded-xl p-4 flex flex-col gap-3"
     >
       <div class="flex justify-end">
         <button
@@ -80,7 +80,7 @@ const activeFiltersCount = computed(
       </div>
       <div class="flex items-center justify-between gap-6">
         <div>
-          <span class="p-4 text-neutral-400 text-xs">Tipo</span>
+          <span class="p-4 text-muted text-xs">Tipo</span>
           <USelect
             v-model="movieStore.filters.type"
             :items="typeItems"
@@ -89,7 +89,7 @@ const activeFiltersCount = computed(
           />
         </div>
         <div>
-          <span class="p-4 text-neutral-400 text-xs">Género</span>
+          <span class="p-4 text-muted text-xs">Género</span>
           <USelect
             v-model="movieStore.filters.genre"
             :items="genresItems"
@@ -98,7 +98,7 @@ const activeFiltersCount = computed(
           />
         </div>
         <div>
-          <span class="p-4 text-neutral-400 text-xs">Año</span>
+          <span class="p-4 text-muted text-xs">Año</span>
           <USelect
             v-model="movieStore.filters.year"
             :items="yearItems"

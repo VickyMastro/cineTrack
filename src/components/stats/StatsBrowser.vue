@@ -9,13 +9,15 @@ const movieStore = useMovieStore()
 
 <template>
   <section class="px-6 py-6">
-    <div class="flex items-center gap-3">
+    <div
+      class="flex items-center gap-3 rounded-xl border border-default bg-elevated p-4 dark:rounded-none dark:border-transparent dark:bg-transparent dark:p-0"
+    >
       <div class="w-10 h-10 bg-green-500/15 rounded-lg flex items-center justify-center shrink-0">
         <UIcon name="i-heroicons-chart-bar-square" class="text-green-400 size-5" />
       </div>
       <div>
-        <h1 class="text-white font-bold text-xl leading-tight">Estadísticas</h1>
-        <p class="text-neutral-400 text-sm">Tu actividad y hábitos de visualización</p>
+        <h1 class="text-highlighted font-bold text-xl leading-tight">Estadísticas</h1>
+        <p class="text-muted text-sm">Tu actividad y hábitos de visualización</p>
       </div>
     </div>
   </section>

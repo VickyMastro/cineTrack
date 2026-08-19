@@ -5,6 +5,18 @@ import ui from '@nuxt/ui/vite'
 export default defineConfig({
   plugins: [
     vue(),
-    ui()
-  ]
+    ui({
+      colorMode: true,
+      ui: {
+        colors: {
+          primary: 'green',
+          neutral: 'zinc',
+        },
+        icons: {
+          light: 'i-heroicons-sun',
+          dark: 'i-heroicons-moon',
+        },
+      },
+    }),
+  ],
 })

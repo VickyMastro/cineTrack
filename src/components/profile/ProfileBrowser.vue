@@ -21,12 +21,12 @@ const formattedDate = computed(() => {
     <div class="tarjeta-perfil">
       <UAvatar
         :alt="userStore.user.username"
-        class="size-20 text-3xl ring-2 ring-neutral-800 shrink-0"
+        class="size-20 text-3xl ring-2 ring-default shrink-0"
       />
       <div class="flex flex-col gap-3">
         <div>
-          <h2 class="text-white font-bold text-3xl leading-tight">{{ userStore.user.username }}</h2>
-          <p class="text-neutral-400 text-sm">{{ userStore.user.email }}</p>
+          <h2 class="text-highlighted font-bold text-3xl leading-tight">{{ userStore.user.username }}</h2>
+          <p class="text-muted text-sm">{{ userStore.user.email }}</p>
         </div>
         <div class="flex items-center gap-2 flex-wrap">
           <span class="badge-info">
@@ -46,10 +46,10 @@ const formattedDate = computed(() => {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "../../assets/css/main.css";
 
 .tarjeta-perfil {
-  @apply flex items-center gap-5 p-6 rounded-xl border border-neutral-800 bg-linear-to-r from-green-500/10 via-neutral-900 to-neutral-900;
+  @apply flex items-center gap-5 p-6 rounded-xl border border-default bg-linear-to-r from-green-500/10 via-elevated to-elevated;
 }
 
 .badge-info {

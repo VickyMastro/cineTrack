@@ -46,13 +46,13 @@ async function registerButton() {
 
 <template>
   <div
-    class="relative z-10 w-[384px] h-auto bg-elevated border border-default rounded-2xl p-6 flex flex-col gap-2"
+    class="relative z-10 w-[384px] h-auto bg-elevated border border-default rounded-2xl p-6 flex flex-col gap-4"
   >
-    <h1 class="font-bold text-2xl text-center">Crear cuenta</h1>
-    <p class="text-center text-muted text-sm">
-      Registrate para guardar tu contenido favorito
-    </p>
-    <UForm class="flex flex-col" :state="registerData" :schema="schema">
+    <div class="flex flex-col gap-1">
+      <h1 class="font-bold text-2xl text-center">Crear cuenta</h1>
+      <p class="text-center text-muted text-sm">Registrate para guardar tu contenido favorito</p>
+    </div>
+    <UForm class="flex flex-col gap-3" :state="registerData" :schema="schema">
       <NameInput v-model="registerData.name" />
       <EmailInput v-model="registerData.email" />
       <PasswordInput v-model="registerData.password" />
@@ -62,10 +62,12 @@ async function registerButton() {
         label="Confirmar contraseña"
       />
 
-      <AuthButton label="Crear cuenta" @click="registerButton" />
-      <div class="flex justify-center text-sm pt-3">
-        <span class="mr-1">¿Ya tienes cuenta?</span>
-        <AuthLink title="Inicia sesión" to="/auth" />
+      <div class="flex flex-col gap-2 mt-2">
+        <AuthButton label="Crear cuenta" @click="registerButton" />
+        <div class="flex justify-center text-sm">
+          <span class="mr-1">¿Ya tienes cuenta?</span>
+          <AuthLink title="Inicia sesión" to="/auth" />
+        </div>
       </div>
     </UForm>
   </div>

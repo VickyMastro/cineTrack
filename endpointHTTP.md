@@ -129,6 +129,71 @@ Authorization: Bearer <access_token>
 
 ---
 
+## PUT `/user` — Actualizar datos del usuario
+
+Actualiza los datos de la cuenta del usuario autenticado (nombre de usuario, email o contraseña).
+
+**Request**
+```http
+PUT /auth/v1/user
+```
+```
+Authorization: Bearer <access_token>
+```
+```json
+{
+  "data": {
+    "username": "nuevo_nombre_de_usuario"
+  }
+}
+```
+
+> En el mismo body también se pueden enviar `email` y `password` para cambiarlos. Si se cambia el `email`, Supabase envía un correo de confirmación al nuevo y (según configuración) al viejo antes de aplicar el cambio.
+
+**Response `200 OK`**
+```json
+{
+  "id": "uuid-del-usuario",
+  "email": "usuario@ejemplo.com",
+  "user_metadata": {
+    "username": "nuevo_nombre_de_usuario"
+  },
+  "updated_at": "2026-08-12T00:00:00Z"
+}
+```
+
+> El `username` vive en `user_metadata`, el mismo campo que ya devuelven `/signup` y `/token`. Actualizarlo acá **no** sincroniza automáticamente `public.profiles.username` (ese campo solo se pobla una vez, al crear la cuenta, vía el trigger `on_auth_user_created`). Si alguna parte de la UI lee el nombre desde `profiles` en vez del store/JWT, hay que actualizarlo aparte con un `PATCH /rest/v1/profiles?id=eq.{uid}` (Data REST API).
+
+---
+
+## DELETE `/admin/users/{uid}` — Dar de baja una cuenta
+
+Elimina definitivamente al usuario de `auth.users` (la baja hace cascada sobre `auth.sessions` y revoca sus refresh tokens, dejando la cuenta inutilizable).
+
+> ⚠️ Este es un endpoint de la **Admin API** de GoTrue: exige la `service_role key` en lugar del `anon key`, y esa clave **nunca debe exponerse en el frontend** (todo lo que empieza con `VITE_` termina siendo público en el bundle). No se puede llamar directamente desde el cliente con el `access_token` del usuario.
+
+**Request** *(solo desde un entorno server-side, ej. una Supabase Edge Function)*
+```http
+DELETE /auth/v1/admin/users/{uid}
+```
+```
+Authorization: Bearer <service_role_key>
+apikey: <service_role_key>
+```
+
+**Response `200 OK`**
+```json
+{}
+```
+
+**Flujo recomendado para "dar de baja" desde la app:**
+1. El frontend llama a una Edge Function propia (ej. `POST /functions/v1/delete-account`) mandando el `access_token` del usuario en `Authorization: Bearer <access_token>`.
+2. La función valida la identidad del usuario con ese token (`supabase.auth.getUser()`).
+3. Recién ahí, usando el `service_role key` guardado como secret del proyecto (nunca en el cliente), la función hace el `DELETE /auth/v1/admin/users/{uid}`.
+4. El frontend limpia la sesión local (equivalente a `POST /logout` + borrar `localStorage`) y redirige a `/auth`.
+
+---
+
 ## Resumen
 
 | Acción | Método | Endpoint |
@@ -137,3 +202,5 @@ Authorization: Bearer <access_token>
 | Inicio de sesión | `POST` | `/auth/v1/token?grant_type=password` |
 | Olvidé contraseña | `POST` | `/auth/v1/recover` |
 | Cierre de sesión | `POST` | `/auth/v1/logout` |
+| Actualizar datos del usuario | `PUT` | `/auth/v1/user` |
+| Dar de baja una cuenta *(requiere backend/Edge Function)* | `DELETE` | `/auth/v1/admin/users/{uid}` |

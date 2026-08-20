@@ -1,0 +1,654 @@
+{
+  "content": [
+    {
+      "type": "movie",
+      "genre_ids": [
+        22,
+        12
+      ],
+      "id": 1392469,
+      "title": "Cocktail 2",
+      "overview": "Tras una década juntos, la relación de Diya y Kunal se tambalea cuando Ally, una vieja amiga, vuelve a sus vidas. Lo que comienza como un plan entre dos mujeres se convierte en un caos, desencadenando una montaña rusa emocional y llena de humor que ninguna de ellas veía venir.",
+      "poster_path": "/oIQmtByV1LtEQSwM4EpdLTyoSlM.jpg",
+      "release_date": "2026-06-19",
+      "vote_average": 5.583,
+      "backdrop_path": "/6tROOVmV5vRymO2g52aR8kWlfoT.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        19,
+        25
+      ],
+      "id": 1339713,
+      "title": "Obsession",
+      "overview": "Tras romper el misterioso \"Sauce del Único Deseo\" para conquistar el corazón de su amor, un romántico sin suerte consigue exactamente lo que pidió, pero pronto descubre que algunos deseos tienen un precio oscuro y siniestro.",
+      "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+      "release_date": "2026-05-13",
+      "vote_average": 7.9,
+      "backdrop_path": "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        25,
+        9,
+        13
+      ],
+      "id": 28322,
+      "title": "Madness",
+      "overview": "Un asesino convicto que logra escapar invade la cabaña de un hombre, su esposa y la hermana de esta, y procede a atormentar a este trío ya disfuncional con violencia y vejaciones.",
+      "poster_path": "/gV0J0Fqw2mYMtQbzb0ruxv9MAeZ.jpg",
+      "release_date": "1980-03-20",
+      "vote_average": 5.1,
+      "backdrop_path": "/7TJjD2X9GTEqyLVIJKLS85J2V47.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        20,
+        15
+      ],
+      "id": 936075,
+      "title": "Michael",
+      "overview": "La historia de Michael Jackson, uno de los artistas más influyentes que el mundo ha conocido, y su vida más allá de la música. Su camino desde el descubrimiento de su extraordinario talento como líder de The Jackson Five, hasta convertirse en el artista visionario cuya ambición creativa lo impulsó a ser el mayor showman del mundo, destacando tanto su vida fuera del escenario como algunas de las actuaciones más icónicas de su carrera solista temprana.",
+      "poster_path": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+      "release_date": "2026-04-22",
+      "vote_average": 8.692,
+      "backdrop_path": "/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        9,
+        17,
+        10
+      ],
+      "id": 931285,
+      "title": "Mortal Kombat II",
+      "overview": "Los campeones favoritos del público —ahora con el mismísimo Johnny Cage entre ellos— se enfrentan en la batalla definitiva, sin reglas ni miramientos, para derrotar el oscuro dominio de Shao Kahn que amenaza la existencia misma del Reino de la Tierra y sus defensores.",
+      "poster_path": "/hwRdDFIhaEmpRgoki805YvyyjZf.jpg",
+      "release_date": "2026-05-06",
+      "vote_average": 7.993,
+      "backdrop_path": "/laR2dpcNpbv83jdlRUNAYPPjH90.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        11,
+        16,
+        12,
+        10
+      ],
+      "id": 1084244,
+      "title": "Toy Story 5",
+      "overview": "Cuando Bonnie recibe una tablet Lilypad de regalo y queda obsesionada con ella, el trabajo de Buzz, Woody, Jessie y el resto de la pandilla se vuelve exponencialmente más difícil al tener que enfrentarse a una nueva amenaza para el tiempo de juego.",
+      "poster_path": "/a6H2U7pjibMia41TwyFVd1PVQw3.jpg",
+      "release_date": "2026-06-17",
+      "vote_average": 7.4,
+      "backdrop_path": "/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        19,
+        12
+      ],
+      "id": 1239134,
+      "title": "Bhooth Bangla",
+      "overview": "Un hombre hereda un palacio en el rural Mangalpur y planea celebrar allí la boda de su hermana, pero extraños sucesos sobrenaturales y los aterrorizados lugareños lo obligan a investigar el misterioso pasado de la propiedad.",
+      "poster_path": "/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg",
+      "release_date": "2026-04-16",
+      "vote_average": 5.6,
+      "backdrop_path": "/A2tzVTVtnTvpji96IZmleN78KKv.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        22
+      ],
+      "id": 1523145,
+      "title": "Your Heart Will Be Broken",
+      "overview": "La estudiante de secundaria Polina es rescatada del acoso en su nueva escuela y llega a un acuerdo con el principal matón, Bars: él debe hacerse pasar por su novio y protegerla, y ella debe hacer todo lo que él diga. Durante este juego, la pareja desarrolla sentimientos reales, pero su familia y compañeros tienen razones para separarlos.",
+      "poster_path": "/7wIBfBl2gejt6xHxNSK0reVIm7E.jpg",
+      "release_date": "2026-03-26",
+      "vote_average": 7.029,
+      "backdrop_path": "/1x9e0qWonw634NhIsRdvnneeqvN.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        25,
+        19
+      ],
+      "id": 1127384,
+      "title": "Deep Water",
+      "overview": "Un grupo de pasajeros internacionales en un vuelo de Los Ángeles a Shanghái se ve obligado a realizar un aterrizaje de emergencia en aguas infestadas de tiburones. El aterrorizado grupo debe trabajar en equipo y superar sus diferencias si quieren escapar del avión que se hunde y de los tiburones atraídos por los restos del naufragio.",
+      "poster_path": "/kjcuS7xaRyqRjVaVcH4t0qHshuX.jpg",
+      "release_date": "2026-04-30",
+      "vote_average": 6.15,
+      "backdrop_path": "/iYjlQzWbcFIjWe2WifbEPb4kErp.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        15,
+        22
+      ],
+      "id": 11012,
+      "title": "Damage",
+      "overview": "La vida de un respetado político británico en la cima de su carrera se desmorona cuando se obsesiona con la amante de su hijo.",
+      "poster_path": "/alf3JOPP7EYP0iO24gwe5YfRnqo.jpg",
+      "release_date": "1992-12-02",
+      "vote_average": 6.582,
+      "backdrop_path": "/krhj4Fhb0G3QCmyBtEADxgFFmRX.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        12,
+        16,
+        21
+      ],
+      "id": 1301421,
+      "title": "The Sheep Detectives",
+      "overview": "George Hardy es un pastor que cada noche lee novelas policiales a sus queridas ovejas, asumiendo que ellas no pueden entender nada. Pero cuando un misterioso incidente altera la vida en la granja, las ovejas deciden que deben convertirse en detectives. Siguiendo las pistas e investigando a los sospechosos humanos, demuestran que hasta las ovejas pueden ser brillantes investigadoras.",
+      "poster_path": "/6QtL9rl3Zb4d8qW6EJ4qO5hSSfU.jpg",
+      "release_date": "2026-04-30",
+      "vote_average": 7.539,
+      "backdrop_path": "/t6O6XWelu27BD0OmIDCCufZZT6d.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        9,
+        10,
+        23
+      ],
+      "id": 1228710,
+      "title": "The Mandalorian and Grogu",
+      "overview": "El malvado Imperio ha caído y los señores de la guerra imperiales siguen dispersos por la galaxia. Mientras la incipiente Nueva República trabaja para proteger todo por lo que luchó la Rebelión, ha enlistado la ayuda del legendario cazarrecompensas mandaloriano Din Djarin y su joven aprendiz Grogu.",
+      "poster_path": "/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
+      "release_date": "2026-05-20",
+      "vote_average": 6.7,
+      "backdrop_path": "/4lj7MZtcIDI2FmZXGkFWh0sNCsq.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        22,
+        15
+      ],
+      "id": 1477317,
+      "title": "Your Fault: London",
+      "overview": "Nick y Noah emprenden aventuras que amenazan con separarlos: Nick en los negocios junto a su padre, y Noah comenzando una nueva etapa en la Universidad de Oxford. Viviendo vidas separadas y conociendo gente nueva, se ven envueltos en tentaciones, rivalidades y traiciones, y su vínculo es puesto a prueba como nunca antes. Mientras los secretos salen a la luz y la tentación crece, deberán luchar por mantenerse juntos... o arriesgarse a perderlo todo.",
+      "poster_path": "/nLxu237EJAisFCYKK48hN9Plobx.jpg",
+      "release_date": "2026-06-17",
+      "vote_average": 7.521,
+      "backdrop_path": "/wQOhbCP6H8bO5ddlXDZT207orew.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        16,
+        12,
+        10,
+        17,
+        11
+      ],
+      "id": 1226863,
+      "title": "The Super Mario Galaxy Movie",
+      "overview": "Tras haber frustrado el plan anterior de Bowser de casarse con la Princesa Peach, Mario y Luigi se enfrentan a una nueva amenaza: Bowser Jr., decidido a liberar a su padre y restaurar el legado familiar. Junto a viejos y nuevos compañeros, los hermanos viajan por las estrellas para detener la cruzada del joven heredero.",
+      "poster_path": "/eJGWx219ZcEMVQJhAgMiqo8tYY.jpg",
+      "release_date": "2026-04-01",
+      "vote_average": 8.226,
+      "backdrop_path": "/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        15,
+        22
+      ],
+      "id": 1226293,
+      "title": "Salitan",
+      "overview": "Una esposa desconfiada sigue a su marido hasta Bali. Allí conoce a un atractivo hombre que le roba el corazón. Pronto desea que su marido tenga realmente una aventura para aliviar la culpa que siente.",
+      "poster_path": "/rMgG7cWuq9O6zhhLs2CbqIKVA8V.jpg",
+      "release_date": "2024-02-16",
+      "vote_average": 4.4,
+      "backdrop_path": "/emK2hOB6ACiExT0lNLog9lAmMFL.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        23,
+        25
+      ],
+      "id": 1275779,
+      "title": "Disclosure Day",
+      "overview": "Un experto en ciberseguridad se convierte en informante tras descubrir secretos sobre extraterrestres, lo que lo pone en la mira de una corporación. Mientras tanto, una meteoróloga que experimenta fenómenos extraños se une a él para demostrar que existe vida más allá de lo que comprendemos.",
+      "poster_path": "/3o5YPjDGDTcTDL5ftDA9NwN9dLd.jpg",
+      "release_date": "2026-06-10",
+      "vote_average": 6.702,
+      "backdrop_path": "/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        9,
+        17
+      ],
+      "id": 1367220,
+      "title": "Karuppu",
+      "overview": "En un mundo donde la justicia falla, la deidad guardiana Vettai Karuppu adopta la identidad de un abogado para combatir un sistema legal corrupto que se aprovecha de los más vulnerables.",
+      "poster_path": "/4KZXlZ5tTT6ghbW77gS4hSLkCd7.jpg",
+      "release_date": "2026-05-14",
+      "vote_average": 6.7,
+      "backdrop_path": "/1eAuwNBy34kkM3xkl202z4f1NiI.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        22,
+        12
+      ],
+      "id": 614945,
+      "title": "Voicemails for Isabelle",
+      "overview": "Los hilarantes y confesionales mensajes de voz que una joven deja para su difunta hermana son redirigidos por error a un desconocido, quien comienza a enamorarse de ella a la distancia.",
+      "poster_path": "/canZTWSxACSnAluir3dCtMxKpA1.jpg",
+      "release_date": "2026-06-20",
+      "vote_average": 8.141,
+      "backdrop_path": "/2WU6Y6aonzD6uAaCmNnEFlesxxJ.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        9,
+        13
+      ],
+      "id": 1280738,
+      "title": "The Furious",
+      "overview": "Después de que la hija de Wang Wei es secuestrada por una red criminal y no recibe ayuda de la policía corrupta, Wei decide buscarla por sus propios medios. Su único aliado es Navin, un periodista incansable cuya esposa ha desaparecido misteriosamente. Impulsados por una venganza furiosa, el insólito dúo libra una batalla despiadada contra los secuestradores en este explosivo enfrentamiento de artes marciales.",
+      "poster_path": "/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg",
+      "release_date": "2026-06-10",
+      "vote_average": 7.7,
+      "backdrop_path": "/ew3EqF9VLTxmK64OsHT7p7lr4wT.jpg"
+    },
+    {
+      "type": "movie",
+      "genre_ids": [
+        18,
+        13,
+        9,
+        17
+      ],
+      "id": 1103473,
+      "title": "KD – The Devil",
+      "overview": "A principios de los años 70, el pequeño delincuente Kaali se ve involucrado sin quererlo con matones del hampa, desencadenando una serie de eventos que escapan a su control.",
+      "poster_path": "/nEuEMJrnLBneE9tJlmzbhCFLu95.jpg",
+      "release_date": "2026-04-30",
+      "vote_average": 7.5,
+      "backdrop_path": "/l1nekhf05HS5OpBr0vRqcD3NxoS.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        21,
+        15,
+        5
+      ],
+      "id": 124364,
+      "title": "FROM",
+      "overview": "Desvela el misterio de una pesadillesca ciudad en el corazón de América que atrapa a todos los que entran en ella. Mientras sus involuntarios residentes luchan por mantener la normalidad y buscan una salida, también deben sobrevivir a las amenazas del bosque circundante, incluidas las aterradoras criaturas que aparecen cuando cae el sol.",
+      "poster_path": "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+      "release_date": "2022-02-20",
+      "vote_average": 8.5,
+      "backdrop_path": "/m7eiSGHFzr584zFmetGqkqaU6BN.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        5,
+        15,
+        1
+      ],
+      "id": 94997,
+      "title": "House of the Dragon",
+      "overview": "La dinastía Targaryen está en el punto más alto de su poder, con más de 15 dragones bajo su yugo. La mayoría de los imperios se derrumban desde tales alturas. En el caso de los Targaryen, su lenta caída comienza cuando el rey Viserys rompe con un siglo de tradición al nombrar a su hija Rhaenyra heredera del Trono de Hierro. Pero cuando Viserys tiene más tarde un hijo varón, la corte se escandaliza al ver que Rhaenyra conserva su condición de heredera, y las semillas de la división siembran fricciones en todo el reino.",
+      "poster_path": "/7V0Ebks0GgpKvQ7QbLAIdX5dos4.jpg",
+      "release_date": "2022-08-21",
+      "vote_average": 8.338,
+      "backdrop_path": "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15
+      ],
+      "id": 284631,
+      "title": "Raakh",
+      "overview": "Cuando dos adolescentes desaparecen, una familia unida queda destrozada y la ciudad entra en alerta. Determinado a descubrir la verdad, un implacable oficial lidera una búsqueda nacional que lo arrastra a un mundo de violencia y depravación humana.",
+      "poster_path": "/5MbNy94ia4ZLf8OGtSfSjjlxxWN.jpg",
+      "release_date": "2026-06-12",
+      "vote_average": 9,
+      "backdrop_path": "/hAuYDYBgLJ1qIPoAOM7yOD56uCp.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15
+      ],
+      "id": 273240,
+      "title": "Off Campus",
+      "overview": "Hannah Wells da clases particulares al capitán del equipo de hockey Garrett Graham para ganarse el corazón de su crush. Lo que comienza como un trato se convierte en una conexión real mientras enfrentan sus pasados. Sus amigos Logan, Dean, Tucker y Allie también navegan la vida universitaria y el amor.",
+      "poster_path": "/cbODFqkcmRgrYH8NkG4Q4Hcg8Z1.jpg",
+      "release_date": "2026-05-13",
+      "vote_average": 8.935,
+      "backdrop_path": "/52sp0vPhLOWrZ1QoZIWiapronM.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15,
+        12
+      ],
+      "id": 107447,
+      "title": "Wanna Be Happy?",
+      "overview": "Alyona Lipnitskaya, al frente de un equipo de médicos, ayuda a sus pacientes a construir una vida personal mediante su propia técnica y demuestra con el ejemplo la eficacia de su estilo de vida: Alyona cumple 50 años, pero nadie le da más de 35. Su clínica es visitada por personas cuyos problemas de salud y dificultades amorosas tienen raíz en la desarmonía sexual. Sin embargo, la vida de esta exitosa doctora en ciencias se complica de repente: el puzle de su vida feliz se desmorona en un instante. Alyona deberá luchar por su clínica, reordenar su vida personal y encontrar una nueva fórmula para la felicidad.",
+      "poster_path": "/9cSh9CuYeRcNMnJiWtBhwOoUghR.jpg",
+      "release_date": "2021-05-19",
+      "vote_average": 7.2,
+      "backdrop_path": "/cA2K3clHcQBtRVbmYX7c6Outst9.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15,
+        21
+      ],
+      "id": 2734,
+      "title": "Law & Order: Special Victims Unit",
+      "overview": "En el sistema de justicia penal, los delitos de carácter sexual son considerados especialmente atroces. En la ciudad de Nueva York, los dedicados detectives que investigan estos crímenes violentos son miembros de una unidad de élite conocida como la Unidad de Víctimas Especiales. Estas son sus historias.",
+      "poster_path": "/iofokHZoUB4Qhik4PflvJl8TT6a.jpg",
+      "release_date": "1999-09-20",
+      "vote_average": 7.95,
+      "backdrop_path": "/obtdxPgmfykYwVnvuYXC5f2xKlQ.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15,
+        12
+      ],
+      "id": 79744,
+      "title": "The Rookie",
+      "overview": "Empezar de nuevo no es fácil, especialmente para John Nolan, un hombre de pueblo que, tras un incidente que le cambió la vida, persigue su sueño de ser oficial del LAPD. Como el novato de mayor edad de la fuerza, se enfrenta al escepticismo de algunos superiores que lo ven como una simple crisis de mediana edad.",
+      "poster_path": "/70kTz0OmjjZe7zHvIDrq2iKW7PJ.jpg",
+      "release_date": "2018-10-16",
+      "vote_average": 8.552,
+      "backdrop_path": "/6iNWfGVCEfASDdlNb05TP5nG0ll.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        5,
+        1
+      ],
+      "id": 76479,
+      "title": "The Boys",
+      "overview": "Un grupo de vigilantes conocidos informalmente como \"The Boys\" se propone acabar con los superhéroes corruptos armados solo con su determinación obrera y su disposición a pelear sin escrúpulos.",
+      "poster_path": "/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+      "release_date": "2019-07-25",
+      "vote_average": 8.45,
+      "backdrop_path": "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        5,
+        15,
+        1
+      ],
+      "id": 1399,
+      "title": "Game of Thrones",
+      "overview": "Siete nobles familias luchan por el control de la mítica tierra de Westeros. La fricción entre las casas desemboca en una guerra a gran escala, mientras un antiguo y terrible mal despierta en el extremo norte. En medio del conflicto, una olvidada orden militar de inadaptados, la Guardia de la Noche, es lo único que se interpone entre los reinos de los hombres y los horrores helados que acechan más allá.",
+      "poster_path": "/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+      "release_date": "2011-04-17",
+      "vote_average": 8.463,
+      "backdrop_path": "/2OMB0ynKlyIenMJWI2Dy9IWT4c.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        12,
+        15
+      ],
+      "id": 290138,
+      "title": "Gram Chikitsalay",
+      "overview": "El joven, idealista y brillante Dr. Prabhat se hace cargo de un Centro de Salud Primario abandonado en una aldea del norte de India, con la esperanza de impulsar los cambios que tanto se necesitan, solo para darse cuenta de que primero tendrá que cambiar él mismo.",
+      "poster_path": "/peRHZYhvuA6MLTJkpf5nIjgsWx5.jpg",
+      "release_date": "2025-05-09",
+      "vote_average": 6.4,
+      "backdrop_path": "/k2RvAGp7b9Yh2py7NC6ZFZ9N5gR.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15
+      ],
+      "id": 549,
+      "title": "Law & Order",
+      "overview": "En casos extraídos de los titulares, la policía investiga crímenes graves y a menudo mortales, analizando las pruebas e interrogando a los sospechosos hasta que alguien es detenido. La fiscalía construye entonces un caso para condenar al culpable probando su responsabilidad más allá de toda duda razonable. Trabajando juntos, estos equipos de expertos navegan todos los ángulos del complejo sistema de justicia penal para hacer de Nueva York un lugar más seguro.",
+      "poster_path": "/haJ9eHytVO3H3JooMJG1DiWwDNm.jpg",
+      "release_date": "1990-09-13",
+      "vote_average": 7.297,
+      "backdrop_path": "/tc7canPSAn2X14hYi6Rl3gZm1o4.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15
+      ],
+      "id": 1416,
+      "title": "Grey's Anatomy",
+      "overview": "Sigue la vida personal y profesional de un grupo de médicos en el Hospital Grey Sloan Memorial de Seattle.",
+      "poster_path": "/hjJkrLXhWvGHpLeLBDFznpBTY1S.jpg",
+      "release_date": "2005-03-27",
+      "vote_average": 8.2,
+      "backdrop_path": "/jP0Rhj9OTPDAwQlHQwOLFDdeE8t.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15,
+        21,
+        13
+      ],
+      "id": 278178,
+      "title": "I Will Find You",
+      "overview": "Encarcelado injustamente por el asesinato de su propio hijo, un padre emprende una desesperada misión de rescate al enterarse de que el niño podría seguir con vida.",
+      "poster_path": "/pb9oYHHNzauiCQZT03MpDAg46GI.jpg",
+      "release_date": "2026-06-18",
+      "vote_average": 8.446,
+      "backdrop_path": "/z0R6ToCsMMkLwuQXjzzdd1QCdJv.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15,
+        21,
+        5
+      ],
+      "id": 1622,
+      "title": "Supernatural",
+      "overview": "Cuando eran niños, Sam y Dean Winchester perdieron a su madre a manos de una misteriosa y demoníaca fuerza sobrenatural. A partir de entonces, su padre los crió como soldados. Les enseñó sobre el mal paranormal que habita en los rincones oscuros y las carreteras secundarias de América... y les enseñó a eliminarlo. Ahora, los hermanos Winchester recorren el país en su Chevy Impala del 67, combatiendo todo tipo de amenazas sobrenaturales a su paso.",
+      "poster_path": "/8iixmfGx5EIFPdpNvB2JvI3VIqX.jpg",
+      "release_date": "2005-09-13",
+      "vote_average": 8.31,
+      "backdrop_path": "/ro0tlgnsco4SwbdAgmscLkSlMSL.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15,
+        1
+      ],
+      "id": 4614,
+      "title": "NCIS",
+      "overview": "Desde asesinatos y espionaje hasta terrorismo y submarinos robados, un equipo de agentes especiales investiga cualquier crimen que tenga alguna relación con el personal de la Armada y el Cuerpo de Marines, sin importar rango ni cargo.",
+      "poster_path": "/mBcu8d6x6zB1el3MPNl7cZQEQ31.jpg",
+      "release_date": "2003-09-23",
+      "vote_average": 7.618,
+      "backdrop_path": "/nn3SuLTO4hum8yAxaY4ql8h6kRk.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        13,
+        15,
+        21
+      ],
+      "id": 5920,
+      "title": "The Mentalist",
+      "overview": "Patrick Jane, un ex médium famoso, utiliza su aguda capacidad de observación y su pericia para \"leer\" a las personas y resolver crímenes graves junto al Buró de Investigaciones de California.",
+      "poster_path": "/acYXu4KaDj1NIkMgObnhe4C4a0T.jpg",
+      "release_date": "2008-09-23",
+      "vote_average": 8.355,
+      "backdrop_path": "/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        5,
+        1,
+        11,
+        12,
+        15
+      ],
+      "id": 45952,
+      "title": "Hunter x Hunter",
+      "overview": "Gon Freecss descubre que el padre del que siempre le dijeron que había muerto en realidad estaba vivo todo ese tiempo. Ging es un famoso Hunter: alguien que ha demostrado ser un miembro de élite de la humanidad. Gon se propone seguir los pasos de su padre y superar el riguroso Examen de Hunter.",
+      "poster_path": "/eobAuhCJA8oRp814V67WhezVXtQ.jpg",
+      "release_date": "1999-10-16",
+      "vote_average": 8.5,
+      "backdrop_path": "/575sxZXNNulSlIz7DvtWH5r4lkC.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        1,
+        15,
+        12
+      ],
+      "id": 276161,
+      "title": "Teach You a Lesson",
+      "overview": "Un inspector de la Oficina de Protección de Derechos Educativos (ERPB), autorizado por el gobierno para usar intervención física y métodos no convencionales, disciplina a estudiantes problemáticos y reforma el sistema educativo.",
+      "poster_path": "/fMECSPrTmRClSViMsXFYmiYIcWP.jpg",
+      "release_date": "2026-06-05",
+      "vote_average": 9.479,
+      "backdrop_path": "/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        15
+      ],
+      "id": 288603,
+      "title": "Never-Ending Summer",
+      "overview": "Para salvar a su abuela gravemente enferma, la estudiante ejemplar Zhou Wan acude al hijastro de su madre, Lu Xixiao, en busca de dinero. Se enamoran durante el verano tras la graduación, pero malentendidos de la realidad los separan. Diez años después se reencuentran en el trabajo. Aunque Lu Xixiao guarda resentimiento, su amor por Zhou Wan permanece. Al descubrir la verdad tras un \"accidente en la fábrica\", resuelven sus diferencias y se reencuentran.",
+      "poster_path": "/9bB4tJbjViEsQCMJ0qth7wuzpNA.jpg",
+      "release_date": "2026-06-16",
+      "vote_average": 8.75,
+      "backdrop_path": "/80vo7eYhAXPJltu32lG5JGrGPzG.jpg"
+    },
+    {
+      "type": "serie",
+      "genre_ids": [
+        11,
+        12
+      ],
+      "id": 276880,
+      "title": "Please Put Them On, Takamine-san",
+      "overview": "La presidenta del consejo estudiantil Takane Takamine es una alumna estrella muy popular. Por su parte, Koushi Shirota tiene pocos amigos. Todo cambia cuando Koushi descubre accidentalmente que Takane tiene la habilidad de retroceder en el tiempo y cambiar acciones pasadas simplemente cambiando su ropa interior. Tras insistir un poco, Koushi accede a ayudarla y hacer las veces de su armario, llevando siempre ropa interior de repuesto a mano.",
+      "poster_path": "/aN4X9QSECSfh5p8S3HtTiWRKJla.jpg",
+      "release_date": "2025-04-02",
+      "vote_average": 7.537,
+      "backdrop_path": "/5AYXcPhbtPe6i1MPnutPhCV6qNd.jpg"
+    }
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "name": "Action & Adventure"
+    },
+    {
+      "id": 5,
+      "name": "Sci-Fi & Fantasy"
+    },
+    {
+      "id": 9,
+      "name": "Action"
+    },
+    {
+      "id": 10,
+      "name": "Adventure"
+    },
+    {
+      "id": 11,
+      "name": "Animation"
+    },
+    {
+      "id": 12,
+      "name": "Comedy"
+    },
+    {
+      "id": 13,
+      "name": "Crime"
+    },
+    {
+      "id": 15,
+      "name": "Drama"
+    },
+    {
+      "id": 16,
+      "name": "Family"
+    },
+    {
+      "id": 17,
+      "name": "Fantasy"
+    },
+    {
+      "id": 18,
+      "name": "History"
+    },
+    {
+      "id": 19,
+      "name": "Horror"
+    },
+    {
+      "id": 20,
+      "name": "Music"
+    },
+    {
+      "id": 21,
+      "name": "Mystery"
+    },
+    {
+      "id": 22,
+      "name": "Romance"
+    },
+    {
+      "id": 23,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 25,
+      "name": "Thriller"
+    }
+  ]
+}

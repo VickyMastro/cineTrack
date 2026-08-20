@@ -7,25 +7,24 @@ const userStore = useUserStore()
 const movieStore = useMovieStore()
 
 onMounted(async () => {
-  await userStore.restoreSession()
   await movieStore.getMovies()
-  if (userStore.accessToken) {
-    await movieStore.getMoviesByAction()
-  }
 })
 
 watch(
-  () => userStore.user.id,
-  async (newId, oldId) => {
-    if (newId === oldId) return
-
-    if (!newId) {
+  [() => userStore.accessToken, () => userStore.user.id],
+  async ([token, id]) => {
+    if (!token || !id) {
       movieStore.clearUserActions()
       return
     }
 
-    await movieStore.getMoviesByAction()
+    try {
+      await movieStore.getMoviesByAction()
+    } catch {
+      movieStore.clearUserActions()
+    }
   },
+  { immediate: true },
 )
 </script>
 

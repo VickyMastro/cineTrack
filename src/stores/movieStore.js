@@ -8,9 +8,7 @@ function movieFetch(path, options = {}, accessToken = null) {
   const headers = {
     'Content-Type': 'application/json',
     apikey: ANON_KEY,
-  }
-  if (accessToken) {
-    headers['Authorization'] = `Bearer ${accessToken}`
+    Authorization: `Bearer ${accessToken || ANON_KEY}`,
   }
   return fetch(`${BASE_URL}${path}`, {
     ...options,
@@ -59,15 +57,28 @@ export const useMovieStore = defineStore('movie', {
     async getMoviesByAction() {
       const userStore = useUserStore()
       const uid = userStore.user.id
+      const token = userStore.accessToken
+
+      if (!uid || !token) {
+        this.clearUserActions()
+        return
+      }
 
       const res = await movieFetch(
         `/user_content?user_id=eq.${uid}&select=content_id,action`,
         {
           method: 'GET',
         },
-        userStore.accessToken,
+        token,
       )
-      const data = await res.json()
+      const data = await res.json().catch(() => null)
+
+      if (userStore.accessToken !== token) return
+
+      if (!res.ok || !Array.isArray(data)) {
+        this.clearUserActions()
+        return
+      }
 
       this.favoriteIds = new Set(
         data.filter((m) => m.action === 'favorite').map((m) => m.content_id),

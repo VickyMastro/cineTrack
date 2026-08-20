@@ -9,6 +9,7 @@ import PasswordInput from './base/inputs/PasswordInput.vue'
 import AuthButton from './base/buttons/AuthButton.vue'
 import AuthLink from './base/links/AuthLink.vue'
 import { useNotify } from '../composables/useNotify'
+import ForgotPassword from './password/ForgotPassword.vue'
 
 const { error } = useNotify()
 
@@ -45,7 +46,7 @@ async function loginButton() {
       <EmailInput v-model="loginData.email" />
       <PasswordInput v-model="loginData.password" />
       <div class="flex justify-end text-sm p-2">
-        <AuthLink title="Olvide mi contraseña" />
+        <ForgotPassword />
       </div>
       <AuthButton label="Iniciar sesión" @click="loginButton" />
       <div class="flex justify-center text-sm pt-2">

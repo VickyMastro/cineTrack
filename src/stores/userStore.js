@@ -23,11 +23,17 @@ export const useUserStore = defineStore('user', {
     user: JSON.parse(localStorage.getItem('user')) || { username: '' },
     accessToken: null,
     sessionRestored: false,
+    recoverySession: false,
   }),
   actions: {
     async restoreSession() {
+      if (this.sessionRestored) return
+
       const refreshToken = localStorage.getItem('refresh_token')
-      if (!refreshToken) return
+      if (!refreshToken) {
+        this.sessionRestored = true
+        return
+      }
 
       const res = await authFetch('/token?grant_type=refresh_token', {
         method: 'POST',
@@ -36,15 +42,19 @@ export const useUserStore = defineStore('user', {
 
       const data = await res.json()
       if (data.access_token) {
-        this.accessToken = data.access_token
-        this.user = {
-          id: data.user.id,
-          email: data.user.email,
-          username: data.user.user_metadata.username,
-          created: data.user.created_at,
-        }
+        this.$patch({
+          accessToken: data.access_token,
+          sessionRestored: true,
+          user: {
+            id: data.user.id,
+            email: data.user.email,
+            username: data.user.user_metadata.username,
+            created: data.user.created_at,
+          },
+        })
         localStorage.setItem('refresh_token', data.refresh_token)
         localStorage.setItem('user', JSON.stringify(this.user))
+        return
       }
 
       this.sessionRestored = true
@@ -67,13 +77,16 @@ export const useUserStore = defineStore('user', {
         throw new Error('No se pudo crear la cuenta. Intentá de nuevo')
       }
 
-      this.user = {
-        id: data.user.id,
-        email: data.user.email,
-        username: data.user.user_metadata.username,
-        created: data.user.created_at,
-      }
-      this.accessToken = data.access_token
+      this.$patch({
+        accessToken: data.access_token,
+        sessionRestored: true,
+        user: {
+          id: data.user.id,
+          email: data.user.email,
+          username: data.user.user_metadata.username,
+          created: data.user.created_at,
+        },
+      })
       localStorage.setItem('refresh_token', data.refresh_token)
       localStorage.setItem('user', JSON.stringify(this.user))
     },
@@ -110,15 +123,98 @@ export const useUserStore = defineStore('user', {
         throw new Error('No se pudo iniciar sesión. Intentá de nuevo.')
       }
 
-      this.user = {
-        id: data.user.id,
-        email: data.user.email,
-        username: data.user.user_metadata.username,
-        created: data.user.created_at,
-      }
-      this.accessToken = data.access_token
+      this.$patch({
+        accessToken: data.access_token,
+        sessionRestored: true,
+        user: {
+          id: data.user.id,
+          email: data.user.email,
+          username: data.user.user_metadata.username,
+          created: data.user.created_at,
+        },
+      })
       localStorage.setItem('refresh_token', data.refresh_token)
       localStorage.setItem('user', JSON.stringify(this.user))
+    },
+
+    async recoveryPasswordEmail(email) {
+      const redirectTo = `${window.location.origin}/recovery-password`
+
+      const res = await authFetch(`/recover?redirect_to=${encodeURIComponent(redirectTo)}`, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+      })
+
+      if (!res.ok) {
+        throw new Error('Error al intentar cambiar la contraseña')
+      }
+    },
+
+    async setNewPassword(newPassword) {
+      if (!this.accessToken) {
+        throw new Error('El enlace venció o no es válido. Pedí uno nuevo.')
+      }
+
+      const res = await authFetch(
+        '/user',
+        {
+          method: 'PUT',
+          body: JSON.stringify({ password: newPassword }),
+        },
+        this.accessToken,
+      )
+      const data = await res.json().catch(() => ({}))
+
+      if (!res.ok) {
+        if (data.error_code === 'same_password') {
+          throw new Error('La nueva contraseña no puede ser igual a la anterior')
+        }
+        throw new Error('El enlace venció o no es válido. Pedí uno nuevo.')
+      }
+
+      this.recoverySession = false
+    },
+
+    async applyRecoveryFromUrl() {
+      const hash = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : ''
+      if (!hash) return false
+
+      const params = new URLSearchParams(hash)
+      history.replaceState(null, '', window.location.pathname)
+
+      if (params.get('error') || params.get('error_code')) {
+        return false
+      }
+
+      const type = params.get('type')
+      const accessToken = params.get('access_token')
+      const refreshToken = params.get('refresh_token')
+      if (type !== 'recovery' || !accessToken) {
+        return false
+      }
+
+      try {
+        const res = await authFetch('/user', { method: 'GET' }, accessToken)
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok) return false
+
+        this.accessToken = accessToken
+        this.recoverySession = true
+        this.sessionRestored = true
+        this.user = {
+          id: data.id,
+          email: data.email,
+          username: data.user_metadata?.username,
+          created: data.created_at,
+        }
+        if (refreshToken) {
+          localStorage.setItem('refresh_token', refreshToken)
+        }
+        localStorage.setItem('user', JSON.stringify(this.user))
+        return true
+      } catch {
+        return false
+      }
     },
 
     async logout() {
@@ -133,8 +229,11 @@ export const useUserStore = defineStore('user', {
         serverError = true
       }
 
-      this.accessToken = null
-      this.user = { username: '' }
+      this.$patch({
+        accessToken: null,
+        sessionRestored: true,
+        user: { username: '' },
+      })
       localStorage.removeItem('refresh_token')
       localStorage.removeItem('user')
 
@@ -158,8 +257,11 @@ export const useUserStore = defineStore('user', {
         throw new Error(body.error || 'No se pudo eliminar la cuenta')
       }
 
-      this.accessToken = null
-      this.user = { username: '' }
+      this.$patch({
+        accessToken: null,
+        sessionRestored: true,
+        user: { username: '' },
+      })
       localStorage.removeItem('refresh_token')
       localStorage.removeItem('user')
     },
